@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html class="light" lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Blog & Actualités | Informatis-web</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          tertiary: "#202428",
+          "on-surface-variant": "#43474e",
+          "on-tertiary-container": "#9fa4a7",
+          "inverse-on-surface": "#ecf1ff",
+          "primary-container": "#1e3a5f",
+          surface: "#f9f9ff",
+          "surface-container-high": "#dee8ff",
+          "on-primary": "#ffffff",
+          "surface-container-highest": "#d8e3fb",
+          error: "#ba1a1a",
+          "secondary-fixed-dim": "#ffb690",
+          "surface-bright": "#f9f9ff",
+          "surface-container-low": "#f0f3ff",
+          "on-secondary-fixed-variant": "#783200",
+          "inverse-primary": "#adc8f5",
+          outline: "#74777f",
+          "on-error-container": "#93000a",
+          "surface-variant": "#d8e3fb",
+          "on-surface": "#111c2d",
+          "secondary-fixed": "#ffdbca",
+          "on-secondary-container": "#5c2400",
+          "surface-tint": "#455f87",
+          "secondary-container": "#fd761a",
+          "inverse-surface": "#263143",
+          primary: "#022448",
+          "tertiary-fixed": "#dfe3e7",
+          "primary-fixed": "#d5e3ff",
+          "on-background": "#111c2d",
+          "outline-variant": "#c4c6cf",
+          "tertiary-container": "#353a3d",
+          "surface-dim": "#cfdaf2",
+          "on-primary-fixed": "#001c3b",
+          "primary-fixed-dim": "#adc8f5",
+          "on-tertiary-fixed-variant": "#43474b",
+          "on-error": "#ffffff",
+          "surface-container": "#e7eeff",
+          background: "#f9f9ff",
+          "on-tertiary": "#ffffff",
+          "error-container": "#ffdad6",
+          "on-primary-container": "#8aa4cf",
+          secondary: "#9d4300",
+          "tertiary-fixed-dim": "#c3c7cb",
+          "on-secondary": "#ffffff",
+          "surface-container-lowest": "#ffffff",
+          "on-primary-fixed-variant": "#2d486d",
+          "on-tertiary-fixed": "#171c1f",
+          "on-secondary-fixed": "#341100"
+        },
+        borderRadius: {
+          DEFAULT: "0.25rem",
+          lg: "0.5rem",
+          xl: "0.75rem",
+          full: "9999px"
+        },
+        spacing: {
+          xs: "4px",
+          base: "8px",
+          xl: "80px",
+          sm: "12px",
+          lg: "48px",
+          "container-max": "1280px",
+          gutter: "24px",
+          md: "24px"
+        },
+        fontFamily: {
+          "body-md": ["Inter"],
+          button: ["Inter"],
+          h3: ["Inter"],
+          "body-lg": ["Inter"],
+          h1: ["Inter"],
+          h2: ["Inter"],
+          "label-sm": ["Inter"]
+        },
+        fontSize: {
+          "body-md": ["16px", { lineHeight: "1.5", fontWeight: "400" }],
+          button: ["16px", { lineHeight: "1", fontWeight: "600" }],
+          h3: ["24px", { lineHeight: "1.3", fontWeight: "600" }],
+          "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+          h1: ["48px", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "700" }],
+          h2: ["36px", { lineHeight: "1.2", letterSpacing: "-0.01em", fontWeight: "700" }],
+          "label-sm": ["14px", { lineHeight: "1", letterSpacing: "0.05em", fontWeight: "600" }]
+        }
+      }
+    }
+  }
+</script>
+<style>
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    vertical-align: middle;
+  }
+  body { font-family: 'Inter', sans-serif; }
+</style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-secondary-container selection:text-white">
+
+<!-- HEADER -->
+<header class="bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 shadow-[0px_4px_20px_rgba(30,58,95,0.08)] sticky top-0 z-50">
+<nav class="flex justify-between items-center h-20 px-8 max-w-[1280px] mx-auto w-full">
+<a href="../index.html" class="text-xl font-bold text-[#1E3A5F] dark:text-white tracking-tighter hover:text-[#F97316] transition-colors">Informatis-web</a>
+<div class="hidden md:flex items-center gap-8">
+<a href="../index.html#services" class="font-['Inter'] font-semibold text-sm uppercase tracking-wider text-[#1E3A5F] opacity-80 hover:opacity-100 dark:text-slate-300 hover:text-[#F97316] transition-colors duration-200">Services</a>
+<a href="../index.html#portfolio" class="font-['Inter'] font-semibold text-sm uppercase tracking-wider text-[#1E3A5F] opacity-80 hover:opacity-100 dark:text-slate-300 hover:text-[#F97316] transition-colors duration-200">Portfolio</a>
+<div class="relative group">
+<a href="#" class="font-['Inter'] font-semibold text-sm uppercase tracking-wider text-[#1E3A5F] opacity-80 hover:opacity-100 dark:text-slate-300 hover:text-[#F97316] transition-colors duration-200 flex items-center gap-1">Expertise <span class="material-symbols-outlined text-base">expand_more</span></a>
+<div class="absolute top-full left-0 w-64 bg-white shadow-lg rounded-lg py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50 border border-slate-100">
+<a href="../expertise/hebergement.html" class="block px-4 py-3 text-sm text-[#1E3A5F] hover:bg-[#F1F5F9] hover:text-[#F97316] transition-colors"><span class="material-symbols-outlined text-base mr-2">cloud</span> Hébergement & Domaines</a>
+<a href="../expertise/seo.html" class="block px-4 py-3 text-sm text-[#1E3A5F] hover:bg-[#F1F5F9] hover:text-[#F97316] transition-colors"><span class="material-symbols-outlined text-base mr-2">trending_up</span> SEO & SEA</a>
+</div>
+</div>
+<a href="../index.html#tarifs" class="font-['Inter'] font-semibold text-sm uppercase tracking-wider text-[#1E3A5F] opacity-80 hover:opacity-100 dark:text-slate-300 hover:text-[#F97316] transition-colors duration-200">Tarifs</a>
+<a href="index.html" class="font-['Inter'] font-semibold text-sm uppercase tracking-wider text-[#F97316] border-b-2 border-[#F97316] pb-1">Blog</a>
+</div>
+<a href="../contact.html" class="bg-[#F97316] text-white px-6 py-2.5 rounded-lg font-button text-button shadow-md hover:scale-[1.02] active:scale-95 transition-all duration-150">Contact</a>
+</nav>
+</header>
+
+<main class="py-xl">
+<div class="max-w-[1280px] mx-auto px-8">
+<div class="text-center mb-16">
+<h1 class="font-h1 text-h1 text-primary mb-4">Blog & Actualités</h1>
+<p class="text-body-lg text-on-surface-variant max-w-2xl mx-auto">Découvrez nos articles sur les dernières tendances du digital, les bonnes pratiques SEO et les innovations technologiques.</p>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+  <!-- Article 1 - SEO -->
+  <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all overflow-hidden group">
+    <div class="h-56 bg-gradient-to-br from-[#1E3A5F] to-[#2D486D] flex items-center justify-center relative overflow-hidden">
+      <span class="material-symbols-outlined text-white/20 text-9xl absolute -bottom-10 -right-10">search</span>
+      <span class="material-symbols-outlined text-white text-7xl relative z-10">article</span>
+    </div>
+    <div class="p-6">
+      <div class="flex items-center gap-2 mb-3">
+        <span class="text-xs font-semibold text-[#F97316] uppercase tracking-wider">SEO</span>
+        <span class="text-xs text-slate-400">• 15 mars 2026</span>
+      </div>
+      <h3 class="font-h3 text-xl text-primary mb-3 group-hover:text-[#F97316] transition-colors">Les tendances SEO 2026</h3>
+      <p class="text-sm text-on-surface-variant mb-4">Découvrez les évolutions du référencement naturel pour cette année : IA, recherche vocale, Core Web Vitals...</p>
+      <a href="../contact.html" class="inline-flex items-center gap-2 text-[#F97316] font-semibold text-sm group-hover:gap-3 transition-all">Lire la suite <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+    </div>
+  </div>
+
+  <!-- Article 2 - SEA -->
+  <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all overflow-hidden group">
+    <div class="h-56 bg-gradient-to-br from-[#F97316] to-[#EA580C] flex items-center justify-center relative overflow-hidden">
+      <span class="material-symbols-outlined text-white/20 text-9xl absolute -bottom-10 -right-10">ads_click</span>
+      <span class="material-symbols-outlined text-white text-7xl relative z-10">campaign</span>
+    </div>
+    <div class="p-6">
+      <div class="flex items-center gap-2 mb-3">
+        <span class="text-xs font-semibold text-[#F97316] uppercase tracking-wider">SEA</span>
+        <span class="text-xs text-slate-400">• 28 février 2026</span>
+      </div>
+      <h3 class="font-h3 text-xl text-primary mb-3 group-hover:text-[#F97316] transition-colors">Optimiser ses campagnes Google Ads</h3>
+      <p class="text-sm text-on-surface-variant mb-4">Nos conseils pour réduire votre CPA et augmenter votre ROI sur les campagnes de publicité en ligne.</p>
+      <a href="../contact.html" class="inline-flex items-center gap-2 text-[#F97316] font-semibold text-sm group-hover:gap-3 transition-all">Lire la suite <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+    </div>
+  </div>
+
+  <!-- Article 3 - Hébergement -->
+  <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all overflow-hidden group">
+    <div class="h-56 bg-gradient-to-br from-[#1E3A5F] to-[#0F2A45] flex items-center justify-center relative overflow-hidden">
+      <span class="material-symbols-outlined text-white/20 text-9xl absolute -bottom-10 -right-10">cloud</span>
+      <span class="material-symbols-outlined text-white text-7xl relative z-10">data_usage</span>
+    </div>
+    <div class="p-6">
+      <div class="flex items-center gap-2 mb-3">
+        <span class="text-xs font-semibold text-[#F97316] uppercase tracking-wider">HÉBERGEMENT</span>
+        <span class="text-xs text-slate-400">• 10 février 2026</span>
+      </div>
+      <h3 class="font-h3 text-xl text-primary mb-3 group-hover:text-[#F97316] transition-colors">Pourquoi choisir OVH pour héberger son site ?</h3>
+      <p class="text-sm text-on-surface-variant mb-4">Les avantages des serveurs français pour votre entreprise : sécurité, RGPD, performances...</p>
+      <a href="../expertise/hebergement.html" class="inline-flex items-center gap-2 text-[#F97316] font-semibold text-sm group-hover:gap-3 transition-all">Lire la suite <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+    </div>
+  </div>
+
+  <!-- Article 4 - E-commerce -->
+  <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all overflow-hidden group">
+    <div class="h-56 bg-gradient-to-br from-[#2D486D] to-[#1E3A5F] flex items-center justify-center relative overflow-hidden">
+      <span class="material-symbols-outlined text-white/20 text-9xl absolute -bottom-10 -right-10">shopping_cart</span>
+      <span class="material-symbols-outlined text-white text-7xl relative z-10">storefront</span>
+    </div>
+    <div class="p-6">
+      <div class="flex items-center gap-2 mb-3">
+        <span class="text-xs font-semibold text-[#F97316] uppercase tracking-wider">E-COMMERCE</span>
+        <span class="text-xs text-slate-400">• 25 janvier 2026</span>
+      </div>
+      <h3 class="font-h3 text-xl text-primary mb-3 group-hover:text-[#F97316] transition-colors">Les clés d'une boutique en ligne performante</h3>
+      <p class="text-sm text-on-surface-variant mb-4">Améliorez votre taux de conversion avec nos conseils UX/UI et techniques.</p>
+      <a href="../contact.html" class="inline-flex items-center gap-2 text-[#F97316] font-semibold text-sm group-hover:gap-3 transition-all">Lire la suite <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+    </div>
+  </div>
+
+  <!-- Article 5 - Data -->
+  <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all overflow-hidden group">
+    <div class="h-56 bg-gradient-to-br from-[#F97316]/90 to-[#EA580C] flex items-center justify-center relative overflow-hidden">
+      <span class="material-symbols-outlined text-white/20 text-9xl absolute -bottom-10 -right-10">analytics</span>
+      <span class="material-symbols-outlined text-white text-7xl relative z-10">query_stats</span>
+    </div>
+    <div class="p-6">
+      <div class="flex items-center gap-2 mb-3">
+        <span class="text-xs font-semibold text-[#F97316] uppercase tracking-wider">DATA</span>
+        <span class="text-xs text-slate-400">• 12 janvier 2026</span>
+      </div>
+      <h3 class="font-h3 text-xl text-primary mb-3 group-hover:text-[#F97316] transition-colors">Comment exploiter vos données pour booster votre croissance</h3>
+      <p class="text-sm text-on-surface-variant mb-4">L'importance de la data-driven culture pour votre entreprise.</p>
+      <a href="../contact.html" class="inline-flex items-center gap-2 text-[#F97316] font-semibold text-sm group-hover:gap-3 transition-all">Lire la suite <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+    </div>
+  </div>
+
+  <!-- Article 6 - IA -->
+  <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all overflow-hidden group">
+    <div class="h-56 bg-gradient-to-br from-[#1E3A5F] to-[#2D486D] flex items-center justify-center relative overflow-hidden">
+      <span class="material-symbols-outlined text-white/20 text-9xl absolute -bottom-10 -right-10">robot</span>
+      <span class="material-symbols-outlined text-white text-7xl relative z-10">neurology</span>
+    </div>
+    <div class="p-6">
+      <div class="flex items-center gap-2 mb-3">
+        <span class="text-xs font-semibold text-[#F97316] uppercase tracking-wider">IA</span>
+        <span class="text-xs text-slate-400">• 5 janvier 2026</span>
+      </div>
+      <h3 class="font-h3 text-xl text-primary mb-3 group-hover:text-[#F97316] transition-colors">L'intelligence artificielle au service du digital</h3>
+      <p class="text-sm text-on-surface-variant mb-4">Comment l'IA transforme les métiers du web et du marketing digital.</p>
+      <a href="../contact.html" class="inline-flex items-center gap-2 text-[#F97316] font-semibold text-sm group-hover:gap-3 transition-all">Lire la suite <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+    </div>
+  </div>
+</div>
+</div>
+</main>
+
+<!-- Footer -->
+<footer class="bg-[#1E3A5F] w-full py-12 px-8">
+<div class="max-w-[1280px] mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="text-lg font-black text-white">Informatis-web</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a href="#" class="text-sm text-white/80 hover:text-[#F97316] transition-all">Mentions Légales</a>
+<a href="#" class="text-sm text-white/80 hover:text-[#F97316] transition-all">CGV</a>
+<a href="#" class="text-sm text-white/80 hover:text-[#F97316] transition-all">Politique de Confidentialité</a>
+<a href="#" class="text-sm text-white/80 hover:text-[#F97316] transition-all">Recrutement</a>
+</div>
+<div class="text-sm text-white/80 text-center md:text-right">© 2026 Informatis-web. Tous droits réservés. Expertise en ingénierie digitale.</div>
+</div>
+</footer>
+</body>
+</html>
