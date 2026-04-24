@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html class="light" lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lancer une campagne SEA | Informatis-web</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          tertiary: "#202428",
+          "on-surface-variant": "#43474e",
+          "on-tertiary-container": "#9fa4a7",
+          "inverse-on-surface": "#ecf1ff",
+          "primary-container": "#1e3a5f",
+          surface: "#f9f9ff",
+          "surface-container-high": "#dee8ff",
+          "on-primary": "#ffffff",
+          "surface-container-highest": "#d8e3fb",
+          error: "#ba1a1a",
+          "secondary-fixed-dim": "#ffb690",
+          "surface-bright": "#f9f9ff",
+          "surface-container-low": "#f0f3ff",
+          "on-secondary-fixed-variant": "#783200",
+          "inverse-primary": "#adc8f5",
+          outline: "#74777f",
+          "on-error-container": "#93000a",
+          "surface-variant": "#d8e3fb",
+          "on-surface": "#111c2d",
+          "secondary-fixed": "#ffdbca",
+          "on-secondary-container": "#5c2400",
+          "surface-tint": "#455f87",
+          "secondary-container": "#fd761a",
+          "inverse-surface": "#263143",
+          primary: "#022448",
+          "tertiary-fixed": "#dfe3e7",
+          "primary-fixed": "#d5e3ff",
+          "on-background": "#111c2d",
+          "outline-variant": "#c4c6cf",
+          "tertiary-container": "#353a3d",
+          "surface-dim": "#cfdaf2",
+          "on-primary-fixed": "#001c3b",
+          "primary-fixed-dim": "#adc8f5",
+          "on-tertiary-fixed-variant": "#43474b",
+          "on-error": "#ffffff",
+          "surface-container": "#e7eeff",
+          background: "#f9f9ff",
+          "on-tertiary": "#ffffff",
+          "error-container": "#ffdad6",
+          "on-primary-container": "#8aa4cf",
+          secondary: "#9d4300",
+          "tertiary-fixed-dim": "#c3c7cb",
+          "on-secondary": "#ffffff",
+          "surface-container-lowest": "#ffffff",
+          "on-primary-fixed-variant": "#2d486d",
+          "on-tertiary-fixed": "#171c1f",
+          "on-secondary-fixed": "#341100"
+        },
+        borderRadius: {
+          DEFAULT: "0.25rem",
+          lg: "0.5rem",
+          xl: "0.75rem",
+          full: "9999px"
+        },
+        spacing: {
+          xs: "4px",
+          base: "8px",
+          xl: "80px",
+          sm: "12px",
+          lg: "48px",
+          "container-max": "1280px",
+          gutter: "24px",
+          md: "24px"
+        },
+        fontFamily: {
+          "body-md": ["Inter"],
+          button: ["Inter"],
+          h3: ["Inter"],
+          "body-lg": ["Inter"],
+          h1: ["Inter"],
+          h2: ["Inter"],
+          "label-sm": ["Inter"]
+        },
+        fontSize: {
+          "body-md": ["16px", { lineHeight: "1.5", fontWeight: "400" }],
+          button: ["16px", { lineHeight: "1", fontWeight: "600" }],
+          h3: ["24px", { lineHeight: "1.3", fontWeight: "600" }],
+          "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+          h1: ["48px", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "700" }],
+          h2: ["36px", { lineHeight: "1.2", letterSpacing: "-0.01em", fontWeight: "700" }],
+          "label-sm": ["14px", { lineHeight: "1", letterSpacing: "0.05em", fontWeight: "600" }]
+        }
+      }
+    }
+  }
+</script>
+<style>
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    vertical-align: middle;
+  }
+  body { font-family: 'Inter', sans-serif; }
+</style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-secondary-container selection:text-white">
+
+<!-- HEADER -->
+<header class="bg-white border-b border-slate-100 shadow-[0px_4px_20px_rgba(30,58,95,0.08)] sticky top-0 z-50">
+<nav class="flex justify-between items-center h-20 px-8 max-w-[1280px] mx-auto w-full">
+<span class="text-xl font-bold text-[#1E3A5F] tracking-tighter">Informatis-web</span>
+<div class="hidden md:flex items-center gap-8">
+<a href="index.html#services" class="font-semibold text-sm uppercase tracking-wider text-[#1E3A5F] opacity-80 hover:opacity-100 hover:text-[#F97316] transition-colors">Services</a>
+<a href="index.html#portfolio" class="font-semibold text-sm uppercase tracking-wider text-[#1E3A5F] opacity-80 hover:opacity-100 hover:text-[#F97316] transition-colors">Portfolio</a>
+<div class="relative group">
+<a href="#" class="font-semibold text-sm uppercase tracking-wider text-[#1E3A5F] opacity-80 hover:opacity-100 hover:text-[#F97316] transition-colors flex items-center gap-1">Expertise <span class="material-symbols-outlined text-base">expand_more</span></a>
+<div class="absolute top-full left-0 w-64 bg-white shadow-lg rounded-lg py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50 border border-slate-100">
+<a href="expertise/hebergement.html" class="block px-4 py-3 text-sm text-[#1E3A5F] hover:bg-[#F1F5F9] hover:text-[#F97316] transition-colors"><span class="material-symbols-outlined text-base mr-2">cloud</span> Hébergement & Domaines</a>
+<a href="expertise/seo.html" class="block px-4 py-3 text-sm text-[#1E3A5F] hover:bg-[#F1F5F9] hover:text-[#F97316] transition-colors"><span class="material-symbols-outlined text-base mr-2">trending_up</span> SEO & SEA</a>
+</div>
+</div>
+<a href="index.html#tarifs" class="font-semibold text-sm uppercase tracking-wider text-[#1E3A5F] opacity-80 hover:opacity-100 hover:text-[#F97316] transition-colors">Tarifs</a>
+<a href="blog.html" class="font-semibold text-sm uppercase tracking-wider text-[#1E3A5F] opacity-80 hover:opacity-100 hover:text-[#F97316] transition-colors">Blog</a>
+</div>
+<button id="menuBtn" class="md:hidden text-[#1E3A5F] focus:outline-none"><span class="material-symbols-outlined">menu</span></button>
+<a href="contact.html" class="bg-[#F97316] text-white px-6 py-2.5 rounded-lg font-button shadow-md hover:scale-[1.02] active:scale-95 transition-all">Contact</a>
+</nav>
+<div id="mobileMenu" class="hidden md:hidden bg-white border-t border-slate-100 py-4 px-8 flex flex-col gap-4 shadow-lg">
+<a href="index.html#services" class="font-semibold text-sm uppercase tracking-wider text-[#1E3A5F] hover:text-[#F97316] transition-colors py-2">Services</a>
+<a href="index.html#portfolio" class="font-semibold text-sm uppercase tracking-wider text-[#1E3A5F] hover:text-[#F97316] transition-colors py-2">Portfolio</a>
+<div class="relative"><button id="mobileExpertiseBtn" class="font-semibold text-sm uppercase tracking-wider text-[#1E3A5F] hover:text-[#F97316] transition-colors py-2 flex items-center gap-1 w-full text-left">Expertise <span class="material-symbols-outlined text-base">expand_more</span></button>
+<div id="mobileExpertiseMenu" class="hidden pl-4 flex flex-col gap-2 mt-1">
+<a href="expertise/hebergement.html" class="block py-2 text-sm text-[#1E3A5F] hover:text-[#F97316] transition-colors">Hébergement & Domaines</a>
+<a href="expertise/seo.html" class="block py-2 text-sm text-[#1E3A5F] hover:text-[#F97316] transition-colors">SEO & SEA</a>
+</div></div>
+<a href="index.html#tarifs" class="font-semibold text-sm uppercase tracking-wider text-[#1E3A5F] hover:text-[#F97316] transition-colors py-2">Tarifs</a>
+<a href="blog.html" class="font-semibold text-sm uppercase tracking-wider text-[#1E3A5F] hover:text-[#F97316] transition-colors py-2">Blog</a>
+<a href="contact.html" class="bg-[#F97316] text-white px-4 py-2 rounded-lg font-button text-center hover:bg-[#EA580C] transition-all">Contact</a>
+</div>
+</header>
+
+<main>
+<!-- Hero Section -->
+<section class="relative bg-gradient-to-r from-[#1E3A5F] to-[#2D486D] text-white py-20 overflow-hidden">
+<div class="absolute inset-0 opacity-10"><div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_30%,#F97316_0%,transparent_50%)]"></div></div>
+<div class="max-w-[1280px] mx-auto px-8 relative z-10">
+<div class="max-w-3xl">
+<div class="inline-block px-4 py-1.5 rounded-full bg-secondary-container/20 text-[#F97316] font-label-sm text-label-sm mb-4">Publicité en ligne</div>
+<h1 class="font-h1 text-h1 mb-6">Lancez votre <span class="text-[#F97316]">campagne SEA</span> dès aujourd'hui</h1>
+<p class="text-body-lg text-white/80 mb-8">Apparaissez en première page des résultats de recherche en quelques heures. Générez du trafic qualifié et des conversions immédiates.</p>
+<div class="flex flex-wrap gap-4">
+<a href="#formulaire" class="bg-[#F97316] text-white px-8 py-4 rounded-lg font-button hover:bg-[#EA580C] transition-all shadow-lg">🚀 Lancer ma campagne</a>
+<a href="#avantages" class="border border-white/30 text-white px-8 py-4 rounded-lg font-button hover:bg-white/10 transition-all">📊 Découvrir les avantages</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Pourquoi le SEA ? -->
+<section id="avantages" class="py-16 bg-white">
+<div class="max-w-[1280px] mx-auto px-8 text-center">
+<div class="inline-block px-4 py-1.5 rounded-full bg-secondary-container/20 text-[#F97316] font-label-sm text-label-sm mb-4">Pourquoi investir dans le SEA ?</div>
+<h2 class="font-h2 text-h2 text-primary mb-6">Des résultats <span class="text-[#F97316]">immédiats et mesurables</span></h2>
+<p class="text-body-lg text-slate-600 max-w-3xl mx-auto mb-12">Avec le SEA, votre campagne publicitaire démarre en quelques heures et génère des leads qualifiés instantanément.</p>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="text-center p-6 bg-[#F1F5F9] rounded-xl"><div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center text-[#F97316] mx-auto mb-4"><span class="material-symbols-outlined text-3xl">schedule</span></div><div class="text-3xl font-bold text-primary">24h</div><p class="text-slate-500 text-sm">pour lancer votre campagne</p></div>
+<div class="text-center p-6 bg-[#F1F5F9] rounded-xl"><div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center text-[#F97316] mx-auto mb-4"><span class="material-symbols-outlined text-3xl">target</span></div><div class="text-3xl font-bold text-primary">+30%</div><p class="text-slate-500 text-sm">de taux de conversion moyen</p></div>
+<div class="text-center p-6 bg-[#F1F5F9] rounded-xl"><div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center text-[#F97316] mx-auto mb-4"><span class="material-symbols-outlined text-3xl">euro</span></div><div class="text-3xl font-bold text-primary">ROI</div><p class="text-slate-500 text-sm">moyen de 200%</p></div>
+<div class="text-center p-6 bg-[#F1F5F9] rounded-xl"><div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center text-[#F97316] mx-auto mb-4"><span class="material-symbols-outlined text-3xl">analytics</span></div><div class="text-3xl font-bold text-primary">100%</div><p class="text-slate-500 text-sm">maîtrise de votre budget</p></div>
+</div>
+</div>
+</section>
+
+<!-- Notre offre SEA -->
+<section class="py-16 bg-[#F1F5F9]">
+<div class="max-w-[1280px] mx-auto px-8">
+<div class="text-center mb-12"><h2 class="font-h2 text-h2 text-primary mb-4">Notre <span class="text-[#F97316]">offre SEA</span></h2><p class="text-slate-600 max-w-2xl mx-auto">Une stratégie complète sur les principales plateformes publicitaires</p></div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="bg-white rounded-2xl p-8 shadow-lg"><div class="flex items-center gap-4 mb-6"><div class="w-16 h-16 bg-gradient-to-br from-[#1E3A5F] to-[#2D486D] rounded-xl flex items-center justify-center text-white"><span class="material-symbols-outlined text-3xl">google</span></div><div><h3 class="text-2xl font-bold text-primary">Google Ads</h3><p class="text-slate-500">Le leader de la publicité en ligne</p></div></div><ul class="space-y-3 mb-6"><li class="flex items-center gap-3"><span class="material-symbols-outlined text-green-500">check_circle</span> Campagnes Search (liens sponsorisés)</li><li class="flex items-center gap-3"><span class="material-symbols-outlined text-green-500">check_circle</span> Display (bannières sur le réseau Google)</li><li class="flex items-center gap-3"><span class="material-symbols-outlined text-green-500">check_circle</span> Shopping (pour sites e-commerce)</li><li class="flex items-center gap-3"><span class="material-symbols-outlined text-green-500">check_circle</span> YouTube Ads (vidéos publicitaires)</li><li class="flex items-center gap-3"><span class="material-symbols-outlined text-green-500">check_circle</span> Remarketing (fidélisation)</li></ul></div>
+<div class="bg-white rounded-2xl p-8 shadow-lg"><div class="flex items-center gap-4 mb-6"><div class="w-16 h-16 bg-gradient-to-br from-[#F97316] to-[#EA580C] rounded-xl flex items-center justify-center text-white"><span class="material-symbols-outlined text-3xl">facebook</span></div><div><h3 class="text-2xl font-bold text-primary">Meta Ads</h3><p class="text-slate-500">Facebook & Instagram</p></div></div><ul class="space-y-3 mb-6"><li class="flex items-center gap-3"><span class="material-symbols-outlined text-green-500">check_circle</span> Ciblage ultra-précis (centres d'intérêt)</li><li class="flex items-center gap-3"><span class="material-symbols-outlined text-green-500">check_circle</span> Campagnes d'acquisition de leads</li><li class="flex items-center gap-3"><span class="material-symbols-outlined text-green-500">check_circle</span> Publicités stories et Reels</li><li class="flex items-center gap-3"><span class="material-symbols-outlined text-green-500">check_circle</span> Retargeting dynamique</li><li class="flex items-center gap-3"><span class="material-symbols-outlined text-green-500">check_circle</span> Marketing d'influence</li></ul></div>
+</div>
+</div>
+</section>
+
+<!-- Comment ça marche -->
+<section class="py-16 bg-white">
+<div class="max-w-[1280px] mx-auto px-8">
+<div class="text-center mb-12"><h2 class="font-h2 text-h2 text-primary mb-4">Comment <span class="text-[#F97316]">ça marche ?</span></h2><p class="text-slate-600 max-w-2xl mx-auto">Notre processus en 4 étapes pour lancer votre campagne SEA</p></div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="text-center"><div class="w-20 h-20 bg-[#1E3A5F] text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">1</div><h3 class="font-bold text-primary mb-2">Audit & Stratégie</h3><p class="text-sm text-slate-500">Analyse de votre marché et définition des objectifs</p></div>
+<div class="text-center"><div class="w-20 h-20 bg-[#1E3A5F] text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">2</div><h3 class="font-bold text-primary mb-2">Configuration</h3><p class="text-sm text-slate-500">Mise en place des comptes et campagnes</p></div>
+<div class="text-center"><div class="w-20 h-20 bg-[#1E3A5F] text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">3</div><h3 class="font-bold text-primary mb-2">Lancement</h3><p class="text-sm text-slate-500">Démarrage des campagnes et suivi intensif</p></div>
+<div class="text-center"><div class="w-20 h-20 bg-[#1E3A5F] text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">4</div><h3 class="font-bold text-primary mb-2">Optimisation continue</h3><p class="text-sm text-slate-500">Ajustements hebdomadaires pour maximiser le ROI</p></div>
+</div>
+</div>
+</section>
+
+<!-- Tarifs -->
+<section class="py-16 bg-[#F1F5F9]">
+<div class="max-w-[1280px] mx-auto px-8">
+<div class="text-center mb-12"><h2 class="font-h2 text-h2 text-primary mb-4">Nos <span class="text-[#F97316]">formules</span> SEA</h2><p class="text-slate-600 max-w-2xl mx-auto">Des offres adaptées à tous les budgets</p></div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-white rounded-2xl p-6 text-center hover:shadow-lg transition-all"><div class="text-2xl font-bold text-primary mb-2">Discovery</div><div class="text-4xl font-bold text-primary mb-4">390€ <span class="text-base font-normal text-slate-500">/mois</span></div><ul class="space-y-2 text-left mb-6"><li class="flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-green-500 text-base">check_circle</span> Configuration campagne</li><li class="flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-green-500 text-base">check_circle</span> Recherche de mots-clés (50)</li><li class="flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-green-500 text-base">check_circle</span> Création d'annonces</li><li class="flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-green-500 text-base">check_circle</span> Rapport mensuel</li></ul><a href="#formulaire" class="block w-full border-2 border-primary text-primary py-2 rounded-lg font-semibold hover:bg-primary hover:text-white transition-all">Choisir cette offre</a></div>
+<div class="bg-gradient-to-r from-[#1E3A5F] to-[#2D486D] rounded-2xl p-6 text-center text-white transform scale-105 shadow-xl relative"><div class="absolute top-0 right-4 bg-[#F97316] text-white px-3 py-1 rounded-b-lg text-xs font-bold">⭐ RECOMMANDÉ</div><div class="text-2xl font-bold mb-2">Performance</div><div class="text-4xl font-bold mb-4">790€ <span class="text-base font-normal text-white/70">/mois</span></div><ul class="space-y-2 text-left mb-6"><li class="flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-[#F97316] text-base">check_circle</span> Tout Discovery +</li><li class="flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-[#F97316] text-base">check_circle</span> Optimisation bi-hebdomadaire</li><li class="flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-[#F97316] text-base">check_circle</span> A/B testing avancé</li><li class="flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-[#F97316] text-base">check_circle</span> Dashboard temps réel</li></ul><a href="#formulaire" class="block w-full bg-[#F97316] text-white py-2 rounded-lg font-semibold hover:bg-[#EA580C] transition-all">Choisir cette offre</a></div>
+<div class="bg-white rounded-2xl p-6 text-center hover:shadow-lg transition-all"><div class="text-2xl font-bold text-primary mb-2">Premium</div><div class="text-4xl font-bold text-primary mb-4">1 290€ <span class="text-base font-normal text-slate-500">/mois</span></div><ul class="space-y-2 text-left mb-6"><li class="flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-green-500 text-base">check_circle</span> Tout Performance +</li><li class="flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-green-500 text-base">check_circle</span> Cross-canal (Google + Meta)</li><li class="flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-green-500 text-base">check_circle</span> Consultant dédié</li><li class="flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-green-500 text-base">check_circle</span> Stratégie d'enchères avancée</li></ul><a href="#formulaire" class="block w-full border-2 border-primary text-primary py-2 rounded-lg font-semibold hover:bg-primary hover:text-white transition-all">Choisir cette offre</a></div>
+</div>
+<p class="text-center text-sm text-slate-400 mt-6">* Budget publicitaire non inclus, à partir de 300€/mois selon vos objectifs</p>
+</div>
+</section>
+
+<!-- Formulaire de lancement de campagne -->
+<section id="formulaire" class="py-16 bg-white">
+<div class="max-w-[1280px] mx-auto px-8">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+<div><div class="inline-block px-4 py-1.5 rounded-full bg-secondary-container/20 text-[#F97316] font-label-sm text-label-sm mb-4">Lancez votre campagne</div>
+<h2 class="font-h2 text-h2 text-primary mb-6">Prêt à <span class="text-[#F97316]">booster</span> votre visibilité ?</h2><p class="text-body-lg text-slate-600 mb-8">Remplissez le formulaire et notre expert SEA vous recontactera sous 24h pour lancer votre campagne.</p>
+<div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-[#F97316] mb-8"><h3 class="font-bold text-primary mb-3">Pourquoi nous choisir ?</h3><ul class="space-y-3"><li class="flex items-center gap-3"><span class="material-symbols-outlined text-green-500">check_circle</span> Google Partner certifié</li><li class="flex items-center gap-3"><span class="material-symbols-outlined text-green-500">check_circle</span> Transparence totale sur les budgets</li><li class="flex items-center gap-3"><span class="material-symbols-outlined text-green-500">check_circle</span> Optimisation continue pour maximiser le ROI</li><li class="flex items-center gap-3"><span class="material-symbols-outlined text-green-500">check_circle</span> Reporting détaillé et accessible</li></ul></div>
+<div class="bg-[#1E3A5F] p-6 rounded-xl text-white"><div class="flex items-center gap-4 mb-4"><span class="material-symbols-outlined text-[#F97316] text-3xl">support_agent</span><h3 class="font-bold text-lg">Besoin de conseils ?</h3></div><p class="text-white/80 text-sm mb-3">Notre équipe SEA est à votre disposition.</p><a href="tel:0143379922" class="text-[#F97316] font-bold text-xl hover:underline">01 43 37 99 22</a></div></div>
+
+<div class="bg-white p-8 rounded-xl shadow-xl"><h2 class="font-h2 text-h2 text-primary mb-2">Lancer ma campagne SEA</h2><p class="text-slate-500 mb-6">Remplissez ce formulaire, nous vous proposons une stratégie personnalisée</p>
+<form id="seaForm" class="space-y-6" onsubmit="event.preventDefault(); showSuccessMessage();"><div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div><label class="text-sm font-semibold text-slate-700 block mb-2">Civilité <span class="text-red-500">*</span></label><select class="w-full bg-[#F1F5F9] border-transparent rounded-lg p-3" required><option>M.</option><option>Mme</option></select></div><div><label class="text-sm font-semibold text-slate-700 block mb-2">Nom & Prénom <span class="text-red-500">*</span></label><input class="w-full bg-[#F1F5F9] border-transparent rounded-lg p-3" placeholder="Jean Dupont" type="text" required/></div></div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div><label class="text-sm font-semibold text-slate-700 block mb-2">Email <span class="text-red-500">*</span></label><input class="w-full bg-[#F1F5F9] border-transparent rounded-lg p-3" placeholder="jean@entreprise.com" type="email" required/></div><div><label class="text-sm font-semibold text-slate-700 block mb-2">Téléphone <span class="text-red-500">*</span></label><input class="w-full bg-[#F1F5F9] border-transparent rounded-lg p-3" placeholder="06 00 00 00 00" type="tel" required/></div></div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div><label class="text-sm font-semibold text-slate-700 block mb-2">Entreprise</label><input class="w-full bg-[#F1F5F9] border-transparent rounded-lg p-3" placeholder="Nom de votre société" type="text"/></div><div><label class="text-sm font-semibold text-slate-700 block mb-2">Budget mensuel SEA prévu</label><select class="w-full bg-[#F1F5F9] border-transparent rounded-lg p-3"><option>Moins de 500€</option><option>500€ - 1 500€</option><option>1 500€ - 3 000€</option><option>3 000€ - 5 000€</option><option>Plus de 5 000€</option></select></div></div>
+<div><label class="text-sm font-semibold text-slate-700 block mb-2">Plateformes souhaitées</label><div class="grid grid-cols-2 gap-3"><label class="flex items-center gap-2"><input type="checkbox" class="rounded border-slate-300 text-[#F97316]"/> Google Ads</label><label class="flex items-center gap-2"><input type="checkbox" class="rounded border-slate-300 text-[#F97316]"/> Facebook Ads</label><label class="flex items-center gap-2"><input type="checkbox" class="rounded border-slate-300 text-[#F97316]"/> Instagram Ads</label><label class="flex items-center gap-2"><input type="checkbox" class="rounded border-slate-300 text-[#F97316]"/> LinkedIn Ads</label></div></div>
+<div><label class="text-sm font-semibold text-slate-700 block mb-2">Objectifs de la campagne</label><textarea class="w-full bg-[#F1F5F9] border-transparent rounded-lg p-3" placeholder="Acquisition de leads, ventes en ligne, notoriété de marque..." rows="3"></textarea></div>
+<div class="flex items-center gap-3"><input class="w-5 h-5 rounded border-slate-300 text-[#F97316]" id="rgpd" type="checkbox" required/><label class="text-sm text-slate-600" for="rgpd">J'accepte que mes données soient utilisées pour la création de ma campagne SEA <span class="text-red-500">*</span></label></div>
+<button type="submit" class="w-full bg-[#F97316] text-white py-4 rounded-lg font-button hover:bg-[#EA580C] transition-all shadow-lg flex items-center justify-center gap-2"><span class="material-symbols-outlined">rocket_launch</span> Lancer ma campagne SEA</button>
+<p class="text-xs text-slate-400 text-center mt-4">* Champs obligatoires. Un expert vous recontacte sous 24h.</p></form>
+<div id="successMessage" class="hidden mt-6 p-6 bg-green-50 border border-green-200 rounded-lg text-center"><span class="material-symbols-outlined text-green-500 text-5xl mb-3">check_circle</span><h3 class="font-bold text-green-700 text-xl mb-2">Demande envoyée !</h3><p class="text-green-600">Merci pour votre confiance. Notre expert SEA vous recontactera sous 24h pour lancer votre campagne.</p><button onclick="resetForm()" class="mt-4 bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600 transition-all">Nouvelle demande</button></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- FAQ SEA -->
+<section class="py-16 bg-[#F1F5F9]">
+<div class="max-w-[1280px] mx-auto px-8">
+<div class="text-center mb-12"><h2 class="font-h2 text-h2 text-primary mb-4">Questions <span class="text-[#F97316]">fréquentes</span></h2><p class="text-slate-600">Tout ce que vous devez savoir sur le SEA</p></div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto"><div class="bg-white p-6 rounded-xl shadow-md"><h3 class="font-bold text-primary mb-2">⏱️ Combien de temps pour lancer ma campagne ?</h3><p class="text-slate-500 text-sm">Une campagne Google Ads peut être lancée en 24 à 48h après validation de votre brief et de votre budget.</p></div><div class="bg-white p-6 rounded-xl shadow-md"><h3 class="font-bold text-primary mb<div class="bg-white p-6 rounded-xl shadow-md"><h3 class="font-bold text-primary mb-2">💰 Quel budget prévoir pour débuter ?</h3><p class="text-slate-500 text-sm">Nous recommandons un budget minimum de 300€/mois pour une campagne SEA efficace. Ce budget est entièrement dédié aux clics, nos honoraires de gestion viennent en plus.</p></div>
+<div class="bg-white p-6 rounded-xl shadow-md"><h3 class="font-bold text-primary mb-2">📊 Comment mesurez-vous le retour sur investissement ?</h3><p class="text-slate-500 text-sm">Nous suivons en temps réel vos conversions (achats, formulaires, appels) et vous fournissons un reporting détaillé avec le ROI généré.</p></div>
+<div class="bg-white p-6 rounded-xl shadow-md"><h3 class="font-bold text-primary mb-2">🔄 Puis-je arrêter ma campagne à tout moment ?</h3><p class="text-slate-500 text-sm">Oui, nos contrats sont sans engagement. Vous pouvez suspendre ou arrêter votre campagne à tout moment.</p></div>
+<div class="bg-white p-6 rounded-xl shadow-md"><h3 class="font-bold text-primary mb-2">🌍 Faites-vous du SEA international ?</h3><p class="text-slate-500 text-sm">Absolument, nous gérons des campagnes SEA dans plus de 20 pays avec des stratégies localisées.</p></div>
+</div>
+</div>
+</section>
+
+<!-- CTA final -->
+<section class="py-16 bg-gradient-to-r from-[#1E3A5F] to-[#2D486D] text-white text-center">
+<div class="max-w-[1280px] mx-auto px-8">
+<div class="max-w-2xl mx-auto">
+<span class="material-symbols-outlined text-5xl mb-4 text-[#F97316]">ads_click</span>
+<h2 class="font-h2 text-h2 mb-4">Prêt à générer des leads qualifiés ?</h2>
+<p class="text-white/80 mb-8">Contactez-nous dès aujourd'hui pour un audit SEA gratuit de votre secteur.</p>
+<div class="flex flex-wrap gap-4 justify-center">
+<a href="#formulaire" class="bg-[#F97316] text-white px-8 py-4 rounded-lg font-button hover:bg-[#EA580C] transition-all shadow-lg">🚀 Lancer ma campagne</a>
+<a href="tel:0143379922" class="border border-white/30 text-white px-8 py-4 rounded-lg font-button hover:bg-white/10 transition-all">📞 01 43 37 99 22</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+
+<footer class="bg-[#1E3A5F] w-full py-12 px-8">
+<div class="max-w-[1280px] mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="text-lg font-black text-white">Informatis-web</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a href="#" class="text-sm text-white/80 hover:text-[#F97316] transition-all">Mentions Légales</a>
+<a href="#" class="text-sm text-white/80 hover:text-[#F97316] transition-all">CGV</a>
+<a href="#" class="text-sm text-white/80 hover:text-[#F97316] transition-all">Politique de Confidentialité</a>
+<a href="#" class="text-sm text-white/80 hover:text-[#F97316] transition-all">Recrutement</a>
+</div>
+<div class="text-sm text-white/80 text-center md:text-right">© 2026 Informatis-web. Tous droits réservés. Expertise en ingénierie digitale.</div>
+</div>
+</footer>
+
+<script>
+function showSuccessMessage() {
+    document.getElementById('seaForm').style.display = 'none';
+    document.getElementById('successMessage').classList.remove('hidden');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+function resetForm() {
+    document.getElementById('seaForm').reset();
+    document.getElementById('seaForm').style.display = 'block';
+    document.getElementById('successMessage').classList.add('hidden');
+}
+const menuBtn=document.getElementById('menuBtn'),mobileMenu=document.getElementById('mobileMenu');if(menuBtn&&mobileMenu){menuBtn.addEventListener('click',()=>{mobileMenu.classList.toggle('hidden')})}
+const mobileExpertiseBtn=document.getElementById('mobileExpertiseBtn'),mobileExpertiseMenu=document.getElementById('mobileExpertiseMenu');if(mobileExpertiseBtn&&mobileExpertiseMenu){mobileExpertiseBtn.addEventListener('click',()=>{mobileExpertiseMenu.classList.toggle('hidden')})}
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{anchor.addEventListener('click',function(e){const target=document.querySelector(this.getAttribute('href'));if(target){e.preventDefault();target.scrollIntoView({behavior:'smooth',block:'start'})}})});
+</script>
+</body>
+</html>
