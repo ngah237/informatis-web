@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html class="light" lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nos Tarifs | Informatis-web</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          tertiary: "#202428",
+          "on-surface-variant": "#43474e",
+          "on-tertiary-container": "#9fa4a7",
+          "inverse-on-surface": "#ecf1ff",
+          "primary-container": "#1e3a5f",
+          surface: "#f9f9ff",
+          "surface-container-high": "#dee8ff",
+          "on-primary": "#ffffff",
+          "surface-container-highest": "#d8e3fb",
+          error: "#ba1a1a",
+          "secondary-fixed-dim": "#ffb690",
+          "surface-bright": "#f9f9ff",
+          "surface-container-low": "#f0f3ff",
+          "on-secondary-fixed-variant": "#783200",
+          "inverse-primary": "#adc8f5",
+          outline: "#74777f",
+          "on-error-container": "#93000a",
+          "surface-variant": "#d8e3fb",
+          "on-surface": "#111c2d",
+          "secondary-fixed": "#ffdbca",
+          "on-secondary-container": "#5c2400",
+          "surface-tint": "#455f87",
+          "secondary-container": "#fd761a",
+          "inverse-surface": "#263143",
+          primary: "#022448",
+          "tertiary-fixed": "#dfe3e7",
+          "primary-fixed": "#d5e3ff",
+          "on-background": "#111c2d",
+          "outline-variant": "#c4c6cf",
+          "tertiary-container": "#353a3d",
+          "surface-dim": "#cfdaf2",
+          "on-primary-fixed": "#001c3b",
+          "primary-fixed-dim": "#adc8f5",
+          "on-tertiary-fixed-variant": "#43474b",
+          "on-error": "#ffffff",
+          "surface-container": "#e7eeff",
+          background: "#f9f9ff",
+          "on-tertiary": "#ffffff",
+          "error-container": "#ffdad6",
+          "on-primary-container": "#8aa4cf",
+          secondary: "#9d4300",
+          "tertiary-fixed-dim": "#c3c7cb",
+          "on-secondary": "#ffffff",
+          "surface-container-lowest": "#ffffff",
+          "on-primary-fixed-variant": "#2d486d",
+          "on-tertiary-fixed": "#171c1f",
+          "on-secondary-fixed": "#341100"
+        },
+        borderRadius: {
+          DEFAULT: "0.25rem",
+          lg: "0.5rem",
+          xl: "0.75rem",
+          full: "9999px"
+        },
+        spacing: {
+          xs: "4px",
+          base: "8px",
+          xl: "80px",
+          sm: "12px",
+          lg: "48px",
+          "container-max": "1280px",
+          gutter: "24px",
+          md: "24px"
+        },
+        fontFamily: {
+          "body-md": ["Inter"],
+          button: ["Inter"],
+          h3: ["Inter"],
+          "body-lg": ["Inter"],
+          h1: ["Inter"],
+          h2: ["Inter"],
+          "label-sm": ["Inter"]
+        },
+        fontSize: {
+          "body-md": ["16px", { lineHeight: "1.5", fontWeight: "400" }],
+          button: ["16px", { lineHeight: "1", fontWeight: "600" }],
+          h3: ["24px", { lineHeight: "1.3", fontWeight: "600" }],
+          "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+          h1: ["48px", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "700" }],
+          h2: ["36px", { lineHeight: "1.2", letterSpacing: "-0.01em", fontWeight: "700" }],
+          "label-sm": ["14px", { lineHeight: "1", letterSpacing: "0.05em", fontWeight: "600" }]
+        }
+      }
+    }
+  }
+</script>
+<style>
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    vertical-align: middle;
+  }
+  body { font-family: 'Inter', sans-serif; }
+  .active-tab {
+    color: #F97316 !important;
+    border-bottom: 2px solid #F97316;
+    padding-bottom: 4px;
+  }
+</style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-secondary-container selection:text-white">
+
+<!-- HEADER COMPLET AVEC ANCRE SUR LE BOUTON TARIFS -->
+<header class="bg-white border-b border-slate-100 shadow-[0px_4px_20px_rgba(30,58,95,0.08)] sticky top-0 z-50">
+<nav class="flex justify-between items-center h-20 px-8 max-w-[1280px] mx-auto w-full">
+<a href="index.html" class="text-xl font-bold text-[#1E3A5F] tracking-tighter hover:text-[#F97316] transition-colors">Informatis-web</a>
+<div class="hidden md:flex items-center gap-8">
+<a href="services.html" class="font-semibold text-sm uppercase tracking-wider text-[#1E3A5F] opacity-80 hover:opacity-100 hover:text-[#F97316] transition-colors">Services</a>
+<a href="portfolio.html" class="font-semibold text-sm uppercase tracking-wider text-[#1E3A5F] opacity-80 hover:opacity-100 hover:text-[#F97316] transition-colors">Portfolio</a>
+<div class="relative group">
+<a href="#" class="font-semibold text-sm uppercase tracking-wider text-[#1E3A5F] opacity-80 hover:opacity-100 hover:text-[#F97316] transition-colors flex items-center gap-1">Expertise <span class="material-symbols-outlined text-base">expand_more</span></a>
+<div class="absolute top-full left-0 w-64 bg-white shadow-lg rounded-lg py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50 border border-slate-100">
+<a href="expertise/hebergement.html" class="block px-4 py-3 text-sm text-[#1E3A5F] hover:bg-[#F1F5F9] hover:text-[#F97316] transition-colors"><span class="material-symbols-outlined text-base mr-2">cloud</span> Hébergement & Domaines</a>
+<a href="expertise/seo.html" class="block px-4 py-3 text-sm text-[#1E3A5F] hover:bg-[#F1F5F9] hover:text-[#F97316] transition-colors"><span class="material-symbols-outlined text-base mr-2">trending_up</span> SEO & SEA</a>
+</div>
+</div>
+<a href="tarifs.html" class="font-semibold text-sm uppercase tracking-wider active-tab">Tarifs</a>
+<a href="blog.html" class="font-semibold text-sm uppercase tracking-wider text-[#1E3A5F] opacity-80 hover:opacity-100 hover:text-[#F97316] transition-colors">Blog</a>
+</div>
+<button id="menuBtn" class="md:hidden text-[#1E3A5F] focus:outline-none"><span class="material-symbols-outlined">menu</span></button>
+<a href="contact.html" class="bg-[#F97316] text-white px-6 py-2.5 rounded-lg font-button shadow-md hover:scale-[1.02] active:scale-95 transition-all">Contact</a>
+</nav>
+<div id="mobileMenu" class="hidden md:hidden bg-white border-t border-slate-100 py-4 px-8 flex flex-col gap-4 shadow-lg">
+<a href="services.html" class="font-semibold text-sm uppercase tracking-wider text-[#1E3A5F] hover:text-[#F97316] transition-colors py-2">Services</a>
+<a href="portfolio.html" class="font-semibold text-sm uppercase tracking-wider text-[#1E3A5F] hover:text-[#F97316] transition-colors py-2">Portfolio</a>
+<div class="relative"><button id="mobileExpertiseBtn" class="font-semibold text-sm uppercase tracking-wider text-[#1E3A5F] hover:text-[#F97316] transition-colors py-2 flex items-center gap-1 w-full text-left">Expertise <span class="material-symbols-outlined text-base">expand_more</span></button>
+<div id="mobileExpertiseMenu" class="hidden pl-4 flex flex-col gap-2 mt-1">
+<a href="expertise/hebergement.html" class="block py-2 text-sm text-[#1E3A5F] hover:text-[#F97316] transition-colors">Hébergement & Domaines</a>
+<a href="expertise/seo.html" class="block py-2 text-sm text-[#1E3A5F] hover:text-[#F97316] transition-colors">SEO & SEA</a>
+</div></div>
+<a href="tarifs.html" class="font-semibold text-sm uppercase tracking-wider text-[#F97316] border-b-2 border-[#F97316] pb-1 w-fit">Tarifs</a>
+<a href="blog.html" class="font-semibold text-sm uppercase tracking-wider text-[#1E3A5F] hover:text-[#F97316] transition-colors py-2">Blog</a>
+<a href="contact.html" class="bg-[#F97316] text-white px-4 py-2 rounded-lg font-button text-center hover:bg-[#EA580C] transition-all">Contact</a>
+</div>
+</header>
+
+<main>
+<!-- Hero Section -->
+<section class="relative bg-gradient-to-r from-[#1E3A5F] to-[#2D486D] text-white py-20 overflow-hidden">
+<div class="absolute inset-0 opacity-10"><div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_30%,#F97316_0%,transparent_50%)]"></div></div>
+<div class="max-w-[1280px] mx-auto px-8 relative z-10">
+<div class="max-w-3xl">
+<div class="inline-block px-4 py-1.5 rounded-full bg-secondary-container/20 text-[#F97316] font-label-sm text-label-sm mb-4">Nos prix</div>
+<h1 class="font-h1 text-h1 mb-6">Des <span class="text-[#F97316]">tarifs</span> transparents et adaptés</h1>
+<p class="text-body-lg text-white/80 mb-8">Des solutions pour tous les budgets, sans mauvaise surprise. Découvrez nos formules et trouvez celle qui correspond à vos besoins.</p>
+<div class="flex flex-wrap gap-4">
+<a href="#formules" class="bg-[#F97316] text-white px-8 py-4 rounded-lg font-button hover:bg-[#EA580C] transition-all shadow-lg">Découvrir nos formules</a>
+<a href="contact.html" class="border border-white/30 text-white px-8 py-4 rounded-lg font-button hover:bg-white/10 transition-all">📞 Demander un devis personnalisé</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Offre Spéciale -->
+<section class="py-8 bg-[#F97316] text-white">
+<div class="max-w-[1280px] mx-auto px-8 text-center">
+<div class="inline-block px-4 py-1 rounded-full bg-white/20 text-white font-semibold text-sm mb-3">🎁 OFFRE SPÉCIALE</div>
+<h2 class="text-3xl md:text-4xl font-bold mb-2">Pack Vitrine Essentiel</h2>
+<p class="text-white/90 mb-4">Votre site professionnel clé en main sans compromis sur la qualité</p>
+<div class="flex items-center justify-center gap-2"><span class="text-5xl font-black">24,90€</span><span class="text-white/80">/ mois</span></div>
+<a href="offre.html" class="inline-block mt-6 bg-white text-[#F97316] px-8 py-3 rounded-lg font-semibold hover:bg-[#1E3A5F] hover:text-white transition-all">Profiter de l'offre</a>
+</div>
+</section>
+
+<!-- Formules principales -->
+<section id="formules" class="py-16 bg-white">
+<div class="max-w-[1280px] mx-auto px-8">
+<div class="text-center mb-12"><h2 class="font-h2 text-h2 text-primary mb-4">Nos <span class="text-[#F97316]">formules</span></h2><p class="text-slate-600 max-w-2xl mx-auto">Choisissez la formule qui correspond le mieux à vos besoins</p></div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all overflow-hidden border border-slate-200"><div class="bg-[#F1F5F9] p-6 text-center"><h3 class="text-2xl font-bold text-primary">Starter</h3><div class="text-4xl font-bold text-primary mt-2">60€<span class="text-base font-normal text-slate-500">/an HT</span></div></div><div class="p-6"><ul class="space-y-3 mb-6"><li class="flex items-center gap-3"><span class="material-symbols-outlined text-green-500">check_circle</span> <span>10 Go Espace SSD</span></li><li class="flex items-center gap-3"><span class="material-symbols-outlined text-green-500">check_circle</span> <span>Trafic non mesuré</span></li><li class="flex items-center gap-3"><span class="material-symbols-outlined text-green-500">check_circle</span> <span>1 Base de données (200Mo)</span></li><li class="flex items-center gap-3"><span class="material-symbols-outlined text-green-500">check_circle</span> <span>Certificat SSL inclus</span></li><li class="flex items-center gap-3"><span class="material-symbols-outlined text-green-500">check_circle</span> <span>5 comptes email</span></li><li class="flex items-center gap-3"><span class="material-symbols-outlined text-slate-300">close</span> <span class="text-slate-400">Support prioritaire</span></li></ul><a href="starter.html" class="block w-full text-center border-2 border-primary text-primary py-3 rounded-lg font-semibold hover:bg-primary hover:text-white transition-all">Choisir Starter</a></div></div>
+<div class="bg-gradient-to-br from-[#1E3A5F] to-[#2D486D] rounded-2xl shadow-xl overflow-hidden transform scale-105 relative"><div class="absolute top-0 right-4 bg-[#F97316] text-white px-3 py-1 rounded-b-lg text-xs font-bold">⭐ RECOMMANDÉ</div><div class="p-6 text-center text-white"><h3 class="text-2xl font-bold">Business Pro</h3><div class="text-4xl font-bold mt-2">1 200€<span class="text-base font-normal text-white/70">/an HT</span></div></div><div class="bg-white/10 p-6"><ul class="space-y-3 mb-6 text-white"><li class="flex items-center gap-3"><span class="material-symbols-outlined text-[#F97316]">check_circle</span> <span>100 Go Espace NVMe</span></li><li class="flex items-center gap-3"><span class="material-symbols-outlined text-[#F97316]">check_circle</span> <span>Haute disponibilité 99,9%</span></li><li class="flex items-center gap-3"><span class="material-symbols-outlined text-[#F97316]">check_circle</span> <span>Bases de données illimitées</span></li><li class="flex items-center gap-3"><span class="material-symbols-outlined text-[#F97316]">check_circle</span> <span>Support prioritaire 24/7</span></li><li class="flex items-center gap-3"><span class="material-symbols-outlined text-[#F97316]">check_circle</span> <span>CDN inclus</span></li><li class="flex items-center gap-3"><span class="material-symbols-outlined text-[#F97316]">check_circle</span> <span>Certificat SSL Wildcard</span></li></ul><a href="business-pro.html" class="block w-full text-center bg-[#F97316] text-white py-3 rounded-lg font-semibold hover:bg-[#EA580C] transition-all shadow-lg">Choisir Business Pro</a></div></div>
+<div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all overflow-hidden border border-slate-200"><div class="bg-[#F1F5F9] p-6 text-center"><h3 class="text-2xl font-bold text-primary">Enterprise Grid</h3><div class="text-4xl font-bold text-primary mt-2">3 600€<span class="text-base font-normal text-slate-500">/an HT</span></div></div><div class="p-6"><ul class="space-y-3 mb-6"><li class="flex items-center gap-3"><span class="material-symbols-outlined text-green-500">check_circle</span> <span>Serveur Dédié Cluster</span></li><li class="flex items-center gap-3"><span class="material-symbols-outlined text-green-500">check_circle</span> <span>1 To Stockage répliqué</span></li><li class="flex items-center gap-3"><span class="material-symbols-outlined text-green-500">check_circle</span> <span>IP Fixe dédiée</span></li><li class="flex items-center gap-3"><span class="material-symbols-outlined text-green-500">check_circle</span> <span>Sauvegardes multi-sites</span></li><li class="flex items-center gap-3"><span class="material-symbols-outlined text-green-500">check_circle</span> <span>Load Balancing</span></li><li class="flex items-center gap-3"><span class="material-symbols-outlined text-green-500">check_circle</span> <span>SLA 99,99%</span></li></ul><a href="enterprise.html" class="block w-full text-center border-2 border-primary text-primary py-3 rounded-lg font-semibold hover:bg-primary hover:text-white transition-all">Choisir Enterprise</a></div></div>
+</div>
+</div>
+</section>
+
+<!-- Tableau comparatif -->
+<section class="py-16 bg-[#F1F5F9]">
+<div class="max-w-[1280px] mx-auto px-8">
+<div class="text-center mb-12"><h2 class="font-h2 text-h2 text-primary mb-4">Comparatif <span class="text-[#F97316]">détaillé</span></h2><p class="text-slate-600 max-w-2xl mx-auto">Comparez toutes les fonctionnalités de nos offres</p></div>
+<div class="overflow-x-auto"><table class="w-full bg-white rounded-2xl shadow-lg"><thead class="bg-[#1E3A5F] text-white"><tr><th class="px-6 py-4 text-left rounded-tl-2xl">Fonctionnalité</th><th class="px-6 py-4 text-center">Starter</th><th class="px-6 py-4 text-center">Business Pro</th><th class="px-6 py-4 text-center rounded-tr-2xl">Enterprise</th></tr></thead><tbody class="divide-y divide-slate-100"><tr><td class="px-6 py-3 font-semibold">Espace de stockage</td><td class="px-6 py-3 text-center">10 Go SSD</td><td class="px-6 py-3 text-center font-semibold text-[#F97316]">100 Go NVMe</td><td class="px-6 py-3 text-center">1 To SSD</td></tr>
+<tr class="bg-[#F8FAFE]"><td class="px-6 py-3 font-semibold">Trafic</td><td class="px-6 py-3 text-center">Illimité</td><td class="px-6 py-3 text-center font-semibold text-[#F97316]">Illimité</td><td class="px-6 py-3 text-center">Illimité</td></tr>
+<tr><td class="px-6 py-3 font-semibold">Bases de données</td><td class="px-6 py-3 text-center">1 (200 Mo)</td><td class="px-6 py-3 text-center font-semibold text-[#F97316]">Illimitées</td><td class="px-6 py-3 text-center">Illimitées</td></tr>
+<tr class="bg-[#F8FAFE]"><td class="px-6 py-3 font-semibold">Certificat SSL</td><td class="px-6 py-3 text-center">✓ Standard</td><td class="px-6 py-3 text-center font-semibold text-[#F97316]">✓ Wildcard</td><td class="px-6 py-3 text-center">✓ Wildcard</td></tr>
+<tr><td class="px-6 py-3 font-semibold">Disponibilité garantie</td><td class="px-6 py-3 text-center">99,5%</td><td class="px-6 py-3 text-center font-semibold text-[#F97316]">99,9%</td><td class="px-6 py-3 text-center">99,99%</td></tr>
+<tr class="bg-[#F8FAFE]"><td class="px-6 py-3 font-semibold">Support technique</td><td class="px-6 py-3 text-center">Email (jours ouvrés)</td><td class="px-6 py-3 text-center font-semibold text-[#F97316]">24/7 prioritaire</td><td class="px-6 py-3 text-center">24/7 dédié</td></tr>
+<tr><td class="px-6 py-3 font-semibold">Sauvegardes</td><td class="px-6 py-3 text-center">Hebdomadaires</td><td class="px-6 py-3 text-center font-semibold text-[#F97316]">Quotidiennes</td><td class="px-6 py-3 text-center">Quotidiennes + réplication</td></tr>
+<tr class="bg-[#F8FAFE]"><td class="px-6 py-3 font-semibold">CDN inclus</td><td class="px-6 py-3 text-center">-</td><td class="px-6 py-3 text-center font-semibold text-[#F97316]">✓</td><td class="px-6 py-3 text-center">✓</td></tr>
+<tr><td class="px-6 py-3 font-semibold">IP dédiée</td><td class="px-6 py-3 text-center">-</td><td class="px-6 py-3 text-center">-</td><td class="px-6 py-3 text-center font-semibold text-[#F97316]">✓</td></tr>
+</tbody></table></div>
+</div>
+</section>
+
+<!-- Services complémentaires -->
+<section class="py-16 bg-white">
+<div class="max-w-[1280px] mx-auto px-8">
+<div class="text-center mb-12"><h2 class="font-h2 text-h2 text-primary mb-4">Services <span class="text-[#F97316]">complémentaires</span></h2><p class="text-slate-600 max-w-2xl mx-auto">Des prestations sur-mesure pour accompagner votre projet</p></div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-[#F1F5F9] p-6 rounded-xl text-center"><div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center text-[#F97316] mx-auto mb-4"><span class="material-symbols-outlined text-3xl">search</span></div><h3 class="text-xl font-bold text-primary mb-2">SEO / Référencement</h3><div class="text-2xl font-bold text-primary mb-2">À partir de 590€<span class="text-base font-normal text-slate-500">/mois</span></div><p class="text-slate-500 text-sm mb-4">Améliorez votre visibilité sur les moteurs de recherche</p><a href="expertise/seo.html" class="inline-block text-[#F97316] font-semibold hover:underline">En savoir plus →</a></div>
+<div class="bg-[#F1F5F9] p-6 rounded-xl text-center"><div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center text-[#F97316] mx-auto mb-4"><span class="material-symbols-outlined text-3xl">ads_click</span></div><h3 class="text-xl font-bold text-primary mb-2">SEA / Publicité</h3><div class="text-2xl font-bold text-primary mb-2">À partir de 390€<span class="text-base font-normal text-slate-500">/mois</span></div><p class="text-slate-500 text-sm mb-4">Générez du trafic qualifié immédiatement</p><a href="expertise/seo.html" class="inline-block text-[#F97316] font-semibold hover:underline">En savoir plus →</a></div>
+<div class="bg-[#F1F5F9] p-6 rounded-xl text-center"><div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center text-[#F97316] mx-auto mb-4"><span class="material-symbols-outlined text-3xl">code</span></div><h3 class="text-xl font-bold text-primary mb-2">Développement sur-mesure</h3><div class="text-2xl font-bold text-primary mb-2">Devis personnalisé</div><p class="text-slate-500 text-sm mb-4">Des applications web adaptées à vos besoins</p><a href="contact.html" class="inline-block text-[#F97316] font-semibold hover:underline">Demander un devis →</a></div>
+</div>
+</div>
+</section>
+
+<!-- FAQ Tarifs -->
+<section class="py-16 bg-[#F1F5F9]">
+<div class="max-w-[1280px] mx-auto px-8">
+<div class="text-center mb-12"><h2 class="font-h2 text-h2 text-primary mb-4">Questions <span class="text-[#F97316]">fréquentes</span></h2><p class="text-slate-600 max-w-2xl mx-auto">Tout ce que vous devez savoir sur nos tarifs</p></div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto"><div class="bg-white p-6 rounded-xl shadow-md"><h3 class="font-bold text-primary mb-2">💳 Quels sont les moyens de paiement acceptés ?</h3><p class="text-slate-500 text-sm">Nous acceptons les cartes bancaires (Visa, Mastercard), les virements bancaires et les chèques.</p></div><div class="bg-white p-6 rounded-xl shadow-md"><h3 class="font-bold text-primary mb-2">🔄 Puis-je changer de formule en cours d'année ?</h3><p class="text-slate-500 text-sm">Oui, vous pouvez évoluer vers une formule supérieure à tout moment. Le passage à une formule inférieure est possible en fin d'engagement.</p></div><div class="bg-white p-6 rounded-xl shadow-md"><h3 class="font-bold text-primary mb-2">📅 Y a-t-il un engagement ?</h3><p class="text-slate-500 text-sm">Les offres Starter, Business Pro et Enterprise sont sans engagement. Vous pouvez résilier à tout moment.</p></div><div class="bg-white p-6 rounded-xl shadow-md"><h3 class="font-bold text-primary mb-2">🔧 Les frais de migration sont-ils inclus ?</h3><p class="text-slate-500 text-sm">Oui, la migration de votre site existant vers nos serveurs est offerte quelle que soit la formule choisie.</p></div></div>
+</div>
+</section>
+
+<!-- CTA -->
+<section class="py-16 bg-gradient-to-r from-[#1E3A5F] to-[#2D486D] text-white text-center"><div class="max-w-[1280px] mx-auto px-8"><div class="max-w-2xl mx-auto"><span class="material-symbols-outlined text-5xl mb-4 text-[#F97316]">request_quote</span><h2 class="font-h2 text-h2 mb-4">Vous avez un projet spécifique ?</h2><p class="text-white/80 mb-8">Contactez-nous pour obtenir un devis personnalisé adapté à vos besoins.</p><div class="flex flex-wrap gap-4 justify-center"><a href="contact.html" class="bg-[#F97316] text-white px-8 py-4 rounded-lg font-button hover:bg-[#EA580C] transition-all shadow-lg">📞 Demander un devis</a><a href="tel:0143379922" class="border border-white/30 text-white px-8 py-4 rounded-lg font-button hover:bg-white/10 transition-all">📱 01 43 37 99 22</a></div></div></div></section>
+</main>
+
+<footer class="bg-[#1E3A5F] w-full py-12 px-8"><div class="max-w-[1280px] mx-auto flex flex-col md:flex-row justify-between items-center gap-6"><div class="text-lg font-black text-white">Informatis-web</div><div class="flex flex-wrap justify-center gap-6"><a href="#" class="text-sm text-white/80 hover:text-[#F97316] transition-all">Mentions Légales</a><a href="#" class="text-sm text-white/80 hover:text-[#F97316] transition-all">CGV</a><a href="#" class="text-sm text-white/80 hover:text-[#F97316] transition-all">Politique de Confidentialité</a><a href="#" class="text-sm text-white/80 hover:text-[#F97316] transition-all">Recrutement</a></div><div class="text-sm text-white/80 text-center md:text-right">© 2026 Informatis-web. Tous droits réservés. Expertise en ingénierie digitale.</div></div></footer>
+
+<script>
+const menuBtn = document.getElementById('menuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+if (menuBtn && mobileMenu) { menuBtn.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); }); }
+const mobileExpertiseBtn = document.getElementById('mobileExpertiseBtn');
+const mobileExpertiseMenu = document.getElementById('mobileExpertiseMenu');
+if (mobileExpertiseBtn && mobileExpertiseMenu) { mobileExpertiseBtn.addEventListener('click', () => { mobileExpertiseMenu.classList.toggle('hidden'); }); }
+document.querySelectorAll('a[href^="#"]').forEach(anchor => { anchor.addEventListener('click', function(e) { const target = document.querySelector(this.getAttribute('href')); if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); } }); });
+</script>
+</body>
+</html>
