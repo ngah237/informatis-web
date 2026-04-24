@@ -159,7 +159,6 @@
 <main>
 <!-- Hero Section -->
 <section class="bg-[#1E3A5F] py-xl overflow-hidden relative">
-<div class="absolute inset-0 opacity-10"><div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_30%,#F97316_0%,transparent_50%)]"></div></div>
 <div class="max-w-[1280px] mx-auto px-8 relative z-10 grid md:grid-cols-2 gap-12 items-center">
 <div>
 <span class="inline-block px-4 py-1.5 rounded-full bg-secondary-container/20 text-[#F97316] font-label-sm text-label-sm mb-6">Expertise Historique</span>
@@ -171,8 +170,15 @@
 </div>
 </div>
 <div class="relative hidden md:block">
-<div class="rounded-xl overflow-hidden shadow-2xl transform rotate-2"><img alt="Bureau Digital Expertise" class="w-full h-auto object-cover" src="https://placehold.co/600x400/1E3A5F/white?text=Expertise+Digital"/></div>
-<div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-lg shadow-xl flex items-center gap-4"><div class="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center text-[#F97316]"><span class="material-symbols-outlined">trending_up</span></div><div><div class="font-bold text-[#1E3A5F]">Top Performance</div><div class="text-xs text-slate-500">Optimisation SEO &amp; SEA</div></div></div>
+<!-- Image de fond dans la partie droite -->
+<div class="absolute inset-0 rounded-xl overflow-hidden z-0">
+    <img src="images/7.jpg" alt="Expertise Digital" class="w-full h-full object-cover"/>
+</div>
+<!-- Contenu par-dessus l'image -->
+<div class="rounded-xl overflow-hidden shadow-2xl transform rotate-2 relative z-10 bg-black/20">
+    <img alt="Bureau Digital Expertise" class="w-full h-auto object-cover opacity-0" src="https://placehold.co/600x400/1E3A5F/white?text=Expertise+Digital"/>
+</div>
+<div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-lg shadow-xl flex items-center gap-4 z-20"><div class="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center text-[#F97316]"><span class="material-symbols-outlined">trending_up</span></div><div><div class="font-bold text-[#1E3A5F]">Top Performance</div><div class="text-xs text-slate-500">Optimisation SEO &amp; SEA</div></div></div>
 </div>
 </div>
 </section>
