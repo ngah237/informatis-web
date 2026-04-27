@@ -130,7 +130,7 @@
 </header>
 
 <main>
-<!-- Hero Section -->
+<!-- Hero Section - image de fond visible -->
 <section class="relative bg-primary-container text-white py-xl overflow-hidden">
 <div class="max-w-[1280px] mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-md items-center relative z-10">
 <div>
@@ -142,9 +142,16 @@
 <a href="../index.html#portfolio" class="border border-on-primary-container text-white px-8 py-4 rounded-lg font-button hover:bg-white/10 transition-colors">Nos références</a>
 </div>
 </div>
-<div class="hidden lg:block relative">
-<div class="absolute -inset-4 bg-secondary-container/20 blur-3xl rounded-full"></div>
-<img alt="SEO SEA Analytics" class="relative z-10 rounded-xl shadow-2xl border border-white/10" src="https://placehold.co/600x400/1E3A5F/white?text=SEO+SEA+Analytics"/>
+<div class="relative hidden lg:block">
+<!-- Image de fond dans la partie droite -->
+<div class="absolute inset-0 rounded-xl overflow-hidden z-0">
+    <img src="../images/12.jpg" alt="SEO SEA Analytics" class="w-full h-full object-cover"/>
+</div>
+<!-- Contenu par-dessus l'image -->
+<div class="rounded-xl overflow-hidden shadow-2xl transform rotate-2 relative z-10 bg-black/20">
+    <img alt="SEO SEA Analytics" class="relative z-10 rounded-xl shadow-2xl border border-white/10 w-full h-auto object-cover opacity-0" src="https://placehold.co/600x400/1E3A5F/white?text=SEO+SEA+Analytics"/>
+</div>
+<div class="absolute -inset-4 bg-secondary-container/20 blur-3xl rounded-full -z-10"></div>
 </div>
 </div>
 </section>
