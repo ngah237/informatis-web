@@ -105,16 +105,25 @@
     vertical-align: middle;
   }
   body { font-family: 'Inter', sans-serif; }
+  .no-scroll { overflow: hidden; }
 </style>
 </head>
 <body class="bg-surface text-on-surface selection:bg-secondary-container selection:text-white">
 
-<!-- HEADER COMPLET -->
+<!-- HEADER -->
 <header class="bg-white border-b border-slate-100 shadow-[0px_4px_20px_rgba(30,58,95,0.08)] sticky top-0 z-50">
 <nav class="flex justify-between items-center h-20 px-8 max-w-[1280px] mx-auto w-full">
-<a href="index.html" class="text-xl font-bold text-[#1E3A5F] tracking-tighter hover:text-[#F97316] transition-colors">Informatis-web</a>
-<div class="hidden md:flex items-center gap-8">
-<a href="services.html" class="font-semibold text-sm uppercase tracking-wider text-[#1E3A5F] opacity-80 hover:opacity-100 hover:text-[#F97316] transition-colors">Services</a>
+<!-- Bouton Burger Mobile à GAUCHE -->
+<button id="menuBtn" class="md:hidden text-[#1E3A5F] hover:bg-slate-100 rounded-lg p-2 transition-colors order-1">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+
+<!-- Logo centré sur mobile, à gauche sur desktop -->
+<a href="index.html" class="text-xl font-bold text-[#1E3A5F] tracking-tighter hover:text-[#F97316] transition-colors absolute left-1/2 transform -translate-x-1/2 md:static md:transform-none order-2 md:order-1">Informatis-web</a>
+
+<!-- Menu Desktop -->
+<div class="hidden md:flex items-center gap-8 order-3">
+<a href="index.html#services" class="font-semibold text-sm uppercase tracking-wider text-[#1E3A5F] opacity-80 hover:opacity-100 hover:text-[#F97316] transition-colors">Services</a>
 <a href="portfolio.html" class="font-semibold text-sm uppercase tracking-wider text-[#F97316] border-b-2 border-[#F97316] pb-1">Portfolio</a>
 <div class="relative group">
 <a href="#" class="font-semibold text-sm uppercase tracking-wider text-[#1E3A5F] opacity-80 hover:opacity-100 hover:text-[#F97316] transition-colors flex items-center gap-1">Expertise <span class="material-symbols-outlined text-base">expand_more</span></a>
@@ -129,22 +138,42 @@
 <a href="index.html#tarifs" class="font-semibold text-sm uppercase tracking-wider text-[#1E3A5F] opacity-80 hover:opacity-100 hover:text-[#F97316] transition-colors">Tarifs</a>
 <a href="blog.html" class="font-semibold text-sm uppercase tracking-wider text-[#1E3A5F] opacity-80 hover:opacity-100 hover:text-[#F97316] transition-colors">Blog</a>
 </div>
-<button id="menuBtn" class="md:hidden text-[#1E3A5F] focus:outline-none"><span class="material-symbols-outlined">menu</span></button>
-<a href="contact.html" class="bg-[#F97316] text-white px-6 py-2.5 rounded-lg font-button shadow-md hover:scale-[1.02] active:scale-95 transition-all">Contact</a>
-</nav>
-<div id="mobileMenu" class="hidden md:hidden bg-white border-t border-slate-100 py-4 px-8 flex flex-col gap-4 shadow-lg">
-<a href="services.html" class="font-semibold text-sm uppercase tracking-wider text-[#1E3A5F] hover:text-[#F97316] transition-colors py-2">Services</a>
-<a href="portfolio.html" class="font-semibold text-sm uppercase tracking-wider text-[#F97316] border-b-2 border-[#F97316] pb-1 w-fit">Portfolio</a>
-<div class="relative"><button id="mobileExpertiseBtn" class="font-semibold text-sm uppercase tracking-wider text-[#1E3A5F] hover:text-[#F97316] transition-colors py-2 flex items-center gap-1 w-full text-left">Expertise <span class="material-symbols-outlined text-base">expand_more</span></button>
-<div id="mobileExpertiseMenu" class="hidden pl-4 flex flex-col gap-2 mt-1">
-<a href="expertise/hebergement.html" class="block py-2 text-sm text-[#1E3A5F] hover:text-[#F97316] transition-colors">Hébergement & Domaines</a>
-<a href="expertise/seo.html" class="block py-2 text-sm text-[#1E3A5F] hover:text-[#F97316] transition-colors">SEO & SEA</a>
-</div></div>
-<a href="index.html#tarifs" class="font-semibold text-sm uppercase tracking-wider text-[#1E3A5F] hover:text-[#F97316] transition-colors py-2">Tarifs</a>
-<a href="blog.html" class="font-semibold text-sm uppercase tracking-wider text-[#1E3A5F] hover:text-[#F97316] transition-colors py-2">Blog</a>
-<a href="contact.html" class="bg-[#F97316] text-white px-4 py-2 rounded-lg font-button text-center hover:bg-[#EA580C] transition-all">Contact</a>
+
+<div class="flex items-center gap-4 order-4">
+<!-- Bouton Contact Desktop -->
+<a href="contact.html" class="hidden md:inline-block bg-[#F97316] text-white px-6 py-2.5 rounded-lg font-button shadow-md hover:scale-[1.02] active:scale-95 transition-all">Contact</a>
 </div>
+</nav>
 </header>
+
+<!-- Menu Mobile - Overlay + Menu latéral -->
+<div id="mobileMenuOverlay" class="fixed inset-0 bg-black/50 z-40 opacity-0 invisible transition-all duration-300 md:hidden">
+<div id="mobileMenu" class="absolute top-0 left-0 w-80 h-full bg-white shadow-2xl z-50 transform -translate-x-full transition-transform duration-300 ease-in-out">
+<div class="flex justify-between items-center p-6 border-b border-slate-100">
+<span class="text-xl font-bold text-[#1E3A5F] tracking-tighter">Menu</span>
+<button id="closeMenuBtn" class="text-[#1E3A5F] p-2 hover:bg-slate-100 rounded-lg transition-colors">
+<span class="material-symbols-outlined text-3xl">close</span>
+</button>
+</div>
+<div class="flex flex-col p-6 gap-4 overflow-y-auto h-[calc(100%-80px)]">
+<a href="index.html#services" class="font-semibold text-base text-[#1E3A5F] py-2 hover:text-[#F97316] transition-colors" onclick="closeMobileMenu()">Services</a>
+<a href="portfolio.html" class="font-semibold text-base text-[#F97316] py-2 transition-colors" onclick="closeMobileMenu()">Portfolio</a>
+<div class="border-t border-slate-100 pt-2">
+<p class="font-semibold text-sm uppercase tracking-wider text-slate-400 mb-3">Expertise</p>
+<div class="pl-4 flex flex-col gap-2">
+<a href="expertise/hebergement.html" class="text-sm text-[#1E3A5F] py-2 hover:text-[#F97316] transition-colors flex items-center gap-2" onclick="closeMobileMenu()"><span class="material-symbols-outlined text-base">cloud</span> Hébergement & Domaines</a>
+<a href="expertise/seo.html" class="text-sm text-[#1E3A5F] py-2 hover:text-[#F97316] transition-colors flex items-center gap-2" onclick="closeMobileMenu()"><span class="material-symbols-outlined text-base">trending_up</span> SEO & SEA</a>
+<a href="starter.html" class="text-sm text-[#1E3A5F] py-2 hover:text-[#F97316] transition-colors flex items-center gap-2" onclick="closeMobileMenu()"><span class="material-symbols-outlined text-base">rocket_launch</span> Offre Starter</a>
+<a href="business-pro.html" class="text-sm text-[#1E3A5F] py-2 hover:text-[#F97316] transition-colors flex items-center gap-2" onclick="closeMobileMenu()"><span class="material-symbols-outlined text-base">star</span> Offre Business Pro</a>
+<a href="enterprise.html" class="text-sm text-[#1E3A5F] py-2 hover:text-[#F97316] transition-colors flex items-center gap-2" onclick="closeMobileMenu()"><span class="material-symbols-outlined text-base">workspace_premium</span> Offre Enterprise</a>
+</div>
+</div>
+<a href="index.html#tarifs" class="font-semibold text-base text-[#1E3A5F] py-2 hover:text-[#F97316] transition-colors" onclick="closeMobileMenu()">Tarifs</a>
+<a href="blog.html" class="font-semibold text-base text-[#1E3A5F] py-2 hover:text-[#F97316] transition-colors" onclick="closeMobileMenu()">Blog</a>
+<a href="contact.html" class="bg-[#F97316] text-white text-center px-6 py-3 rounded-lg font-button mt-4 hover:bg-[#EA580C] transition-all" onclick="closeMobileMenu()">Contact</a>
+</div>
+</div>
+</div>
 
 <main>
 <!-- Hero Section -->
@@ -180,11 +209,12 @@
 <section id="projects" class="py-16 bg-[#F1F5F9]">
 <div class="max-w-[1280px] mx-auto px-8">
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+  
   <!-- Projet 1 - Informatis-TS -->
   <div class="project-item bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all overflow-hidden group" data-category="web">
     <div class="relative overflow-hidden h-64">
-      <img alt="Informatis-TS" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://placehold.co/600x400/1E3A5F/white?text=Informatis-TS"/>
-      <div class="absolute inset-0 bg-[#1E3A5F]/80 opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center">
+      <img alt="Informatis-TS - Solution logicielle de gestion" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop"/>
+      <div class="absolute inset-0 bg-[#1E3A5F]/70 opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center">
         <div class="text-center text-white">
           <span class="material-symbols-outlined text-4xl mb-2">visibility</span>
           <p class="font-semibold">Voir le projet</p>
@@ -194,33 +224,38 @@
     <div class="p-6">
       <div class="flex justify-between items-start mb-2"><h3 class="text-xl font-bold text-primary">Informatis-TS</h3><span class="text-xs bg-[#F1F5F9] px-3 py-1 rounded-full text-[#F97316] font-semibold">Solution Logicielle</span></div>
       <p class="text-slate-500 text-sm mb-4">Application de gestion complète pour société de services en ingénierie informatique.</p>
-      <div class="flex items-center justify-between"><div class="flex items-center gap-2 text-sm text-slate-400"><span class="material-symbols-outlined text-base">code</span> React, Node.js, MongoDB</div><a href="contact.html" class="text-[#F97316] font-semibold text-sm flex items-center gap-1 hover:gap-2 transition-all">En savoir plus <span class="material-symbols-outlined text-sm">arrow_forward</span></a></div>
+      <div class="flex items-center justify-between"><div class="flex items-center gap-2 text-sm text-slate-400"><span class="material-symbols-outlined text-base">code</span> React, Node.js, MongoDB</div><button onclick="openModal(1)" class="text-[#F97316] font-semibold text-sm flex items-center gap-1 hover:gap-2 transition-all cursor-pointer">En savoir plus <span class="material-symbols-outlined text-sm">arrow_forward</span></button></div>
     </div>
   </div>
+  
   <!-- Projet 2 - Café-spectacle -->
   <div class="project-item bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all overflow-hidden group" data-category="web">
-    <div class="relative overflow-hidden h-64"><img alt="Café-spectacle" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://placehold.co/600x400/1E3A5F/white?text=Cafe+spectacle"/><div class="absolute inset-0 bg-[#1E3A5F]/80 opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center"><div class="text-center text-white"><span class="material-symbols-outlined text-4xl mb-2">visibility</span><p class="font-semibold">Voir le projet</p></div></div></div>
-    <div class="p-6"><div class="flex justify-between items-start mb-2"><h3 class="text-xl font-bold text-primary">Café-spectacle</h3><span class="text-xs bg-[#F1F5F9] px-3 py-1 rounded-full text-[#F97316] font-semibold">Événementiel</span></div><p class="text-slate-500 text-sm mb-4">Plateforme de réservation pour salles de spectacle et gestion d'événements culturels.</p><div class="flex items-center justify-between"><div class="flex items-center gap-2 text-sm text-slate-400"><span class="material-symbols-outlined text-base">calendar_month</span> PHP, MySQL, Stripe</div><a href="contact.html" class="text-[#F97316] font-semibold text-sm flex items-center gap-1 hover:gap-2 transition-all">En savoir plus <span class="material-symbols-outlined text-sm">arrow_forward</span></a></div></div>
+    <div class="relative overflow-hidden h-64"><img alt="Café-spectacle - Plateforme de réservation" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=600&h=400&fit=crop"/><div class="absolute inset-0 bg-[#1E3A5F]/70 opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center"><div class="text-center text-white"><span class="material-symbols-outlined text-4xl mb-2">visibility</span><p class="font-semibold">Voir le projet</p></div></div></div>
+    <div class="p-6"><div class="flex justify-between items-start mb-2"><h3 class="text-xl font-bold text-primary">Café-spectacle</h3><span class="text-xs bg-[#F1F5F9] px-3 py-1 rounded-full text-[#F97316] font-semibold">Événementiel</span></div><p class="text-slate-500 text-sm mb-4">Plateforme de réservation pour salles de spectacle et gestion d'événements culturels.</p><div class="flex items-center justify-between"><div class="flex items-center gap-2 text-sm text-slate-400"><span class="material-symbols-outlined text-base">calendar_month</span> PHP, MySQL, Stripe</div><button onclick="openModal(2)" class="text-[#F97316] font-semibold text-sm flex items-center gap-1 hover:gap-2 transition-all cursor-pointer">En savoir plus <span class="material-symbols-outlined text-sm">arrow_forward</span></button></div></div>
   </div>
+  
   <!-- Projet 3 - Internis Média -->
   <div class="project-item bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all overflow-hidden group" data-category="web">
-    <div class="relative overflow-hidden h-64"><img alt="Internis Média" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://placehold.co/600x400/1E3A5F/white?text=Internis+Media"/><div class="absolute inset-0 bg-[#1E3A5F]/80 opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center"><div class="text-center text-white"><span class="material-symbols-outlined text-4xl mb-2">visibility</span><p class="font-semibold">Voir le projet</p></div></div></div>
-    <div class="p-6"><div class="flex justify-between items-start mb-2"><h3 class="text-xl font-bold text-primary">Internis Média</h3><span class="text-xs bg-[#F1F5F9] px-3 py-1 rounded-full text-[#F97316] font-semibold">Agence Digitale</span></div><p class="text-slate-500 text-sm mb-4">Refonte complète du site vitrine pour une agence de communication digitale.</p><div class="flex items-center justify-between"><div class="flex items-center gap-2 text-sm text-slate-400"><span class="material-symbols-outlined text-base">design_services</span> WordPress, Tailwind, JS</div><a href="contact.html" class="text-[#F97316] font-semibold text-sm flex items-center gap-1 hover:gap-2 transition-all">En savoir plus <span class="material-symbols-outlined text-sm">arrow_forward</span></a></div></div>
+    <div class="relative overflow-hidden h-64"><img alt="Internis Média - Agence digitale" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&h=400&fit=crop"/><div class="absolute inset-0 bg-[#1E3A5F]/70 opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center"><div class="text-center text-white"><span class="material-symbols-outlined text-4xl mb-2">visibility</span><p class="font-semibold">Voir le projet</p></div></div></div>
+    <div class="p-6"><div class="flex justify-between items-start mb-2"><h3 class="text-xl font-bold text-primary">Internis Média</h3><span class="text-xs bg-[#F1F5F9] px-3 py-1 rounded-full text-[#F97316] font-semibold">Agence Digitale</span></div><p class="text-slate-500 text-sm mb-4">Refonte complète du site vitrine pour une agence de communication digitale.</p><div class="flex items-center justify-between"><div class="flex items-center gap-2 text-sm text-slate-400"><span class="material-symbols-outlined text-base">design_services</span> WordPress, Tailwind, JS</div><button onclick="openModal(3)" class="text-[#F97316] font-semibold text-sm flex items-center gap-1 hover:gap-2 transition-all cursor-pointer">En savoir plus <span class="material-symbols-outlined text-sm">arrow_forward</span></button></div></div>
   </div>
+  
   <!-- Projet 4 - Site Minceur -->
   <div class="project-item bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all overflow-hidden group" data-category="ecommerce">
-    <div class="relative overflow-hidden h-64"><img alt="Site Minceur" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://placehold.co/600x400/1E3A5F/white?text=Site+Minceur"/><div class="absolute inset-0 bg-[#1E3A5F]/80 opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center"><div class="text-center text-white"><span class="material-symbols-outlined text-4xl mb-2">visibility</span><p class="font-semibold">Voir le projet</p></div></div></div>
-    <div class="p-6"><div class="flex justify-between items-start mb-2"><h3 class="text-xl font-bold text-primary">Site Minceur</h3><span class="text-xs bg-[#F1F5F9] px-3 py-1 rounded-full text-[#F97316] font-semibold">Santé & Bien-être</span></div><p class="text-slate-500 text-sm mb-4">Blog et boutique en ligne pour coach sportif avec programmes personnalisés.</p><div class="flex items-center justify-between"><div class="flex items-center gap-2 text-sm text-slate-400"><span class="material-symbols-outlined text-base">fitness_center</span> WooCommerce, Elementor</div><a href="contact.html" class="text-[#F97316] font-semibold text-sm flex items-center gap-1 hover:gap-2 transition-all">En savoir plus <span class="material-symbols-outlined text-sm">arrow_forward</span></a></div></div>
+    <div class="relative overflow-hidden h-64"><img alt="Site Minceur - Bien-être et fitness" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop"/><div class="absolute inset-0 bg-[#1E3A5F]/70 opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center"><div class="text-center text-white"><span class="material-symbols-outlined text-4xl mb-2">visibility</span><p class="font-semibold">Voir le projet</p></div></div></div>
+    <div class="p-6"><div class="flex justify-between items-start mb-2"><h3 class="text-xl font-bold text-primary">Site Minceur</h3><span class="text-xs bg-[#F1F5F9] px-3 py-1 rounded-full text-[#F97316] font-semibold">Santé & Bien-être</span></div><p class="text-slate-500 text-sm mb-4">Blog et boutique en ligne pour coach sportif avec programmes personnalisés.</p><div class="flex items-center justify-between"><div class="flex items-center gap-2 text-sm text-slate-400"><span class="material-symbols-outlined text-base">fitness_center</span> WooCommerce, Elementor</div><button onclick="openModal(4)" class="text-[#F97316] font-semibold text-sm flex items-center gap-1 hover:gap-2 transition-all cursor-pointer">En savoir plus <span class="material-symbols-outlined text-sm">arrow_forward</span></button></div></div>
   </div>
+  
   <!-- Projet 5 - Observatoire du laxisme -->
   <div class="project-item bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all overflow-hidden group" data-category="web">
-    <div class="relative overflow-hidden h-64"><img alt="Observatoire du laxisme" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://placehold.co/600x400/1E3A5F/white?text=Observatoire"/><div class="absolute inset-0 bg-[#1E3A5F]/80 opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center"><div class="text-center text-white"><span class="material-symbols-outlined text-4xl mb-2">visibility</span><p class="font-semibold">Voir le projet</p></div></div></div>
-    <div class="p-6"><div class="flex justify-between items-start mb-2"><h3 class="text-xl font-bold text-primary">Observatoire du laxisme</h3><span class="text-xs bg-[#F1F5F9] px-3 py-1 rounded-full text-[#F97316] font-semibold">Institutionnel</span></div><p class="text-slate-500 text-sm mb-4">Plateforme d'information et de données pour observatoire national.</p><div class="flex items-center justify-between"><div class="flex items-center gap-2 text-sm text-slate-400"><span class="material-symbols-outlined text-base">gavel</span> Django, PostgreSQL, D3.js</div><a href="contact.html" class="text-[#F97316] font-semibold text-sm flex items-center gap-1 hover:gap-2 transition-all">En savoir plus <span class="material-symbols-outlined text-sm">arrow_forward</span></a></div></div>
+    <div class="relative overflow-hidden h-64"><img alt="Observatoire du laxisme - Plateforme institutionnelle" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=400&fit=crop"/><div class="absolute inset-0 bg-[#1E3A5F]/70 opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center"><div class="text-center text-white"><span class="material-symbols-outlined text-4xl mb-2">visibility</span><p class="font-semibold">Voir le projet</p></div></div></div>
+    <div class="p-6"><div class="flex justify-between items-start mb-2"><h3 class="text-xl font-bold text-primary">Observatoire du laxisme</h3><span class="text-xs bg-[#F1F5F9] px-3 py-1 rounded-full text-[#F97316] font-semibold">Institutionnel</span></div><p class="text-slate-500 text-sm mb-4">Plateforme d'information et de données pour observatoire national.</p><div class="flex items-center justify-between"><div class="flex items-center gap-2 text-sm text-slate-400"><span class="material-symbols-outlined text-base">gavel</span> Django, PostgreSQL, D3.js</div><button onclick="openModal(5)" class="text-[#F97316] font-semibold text-sm flex items-center gap-1 hover:gap-2 transition-all cursor-pointer">En savoir plus <span class="material-symbols-outlined text-sm">arrow_forward</span></button></div></div>
   </div>
+  
   <!-- Projet 6 - DPN-PC -->
   <div class="project-item bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all overflow-hidden group" data-category="ecommerce">
-    <div class="relative overflow-hidden h-64"><img alt="DPN-PC" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://placehold.co/600x400/1E3A5F/white?text=DPN-PC"/><div class="absolute inset-0 bg-[#1E3A5F]/80 opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center"><div class="text-center text-white"><span class="material-symbols-outlined text-4xl mb-2">visibility</span><p class="font-semibold">Voir le projet</p></div></div></div>
-    <div class="p-6"><div class="flex justify-between items-start mb-2"><h3 class="text-xl font-bold text-primary">DPN-PC</h3><span class="text-xs bg-[#F1F5F9] px-3 py-1 rounded-full text-[#F97316] font-semibold">E-commerce</span></div><p class="text-slate-500 text-sm mb-4">Boutique en ligne de matériel informatique haut de gamme.</p><div class="flex items-center justify-between"><div class="flex items-center gap-2 text-sm text-slate-400"><span class="material-symbols-outlined text-base">computer</span> PrestaShop, PayPal, Stripe</div><a href="contact.html" class="text-[#F97316] font-semibold text-sm flex items-center gap-1 hover:gap-2 transition-all">En savoir plus <span class="material-symbols-outlined text-sm">arrow_forward</span></a></div></div>
+    <div class="relative overflow-hidden h-64"><img alt="DPN-PC - Matériel informatique" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=600&h=400&fit=crop"/><div class="absolute inset-0 bg-[#1E3A5F]/70 opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center"><div class="text-center text-white"><span class="material-symbols-outlined text-4xl mb-2">visibility</span><p class="font-semibold">Voir le projet</p></div></div></div>
+    <div class="p-6"><div class="flex justify-between items-start mb-2"><h3 class="text-xl font-bold text-primary">DPN-PC</h3><span class="text-xs bg-[#F1F5F9] px-3 py-1 rounded-full text-[#F97316] font-semibold">E-commerce</span></div><p class="text-slate-500 text-sm mb-4">Boutique en ligne de matériel informatique haut de gamme.</p><div class="flex items-center justify-between"><div class="flex items-center gap-2 text-sm text-slate-400"><span class="material-symbols-outlined text-base">computer</span> PrestaShop, PayPal, Stripe</div><button onclick="openModal(6)" class="text-[#F97316] font-semibold text-sm flex items-center gap-1 hover:gap-2 transition-all cursor-pointer">En savoir plus <span class="material-symbols-outlined text-sm">arrow_forward</span></button></div></div>
   </div>
 </div>
 </div>
@@ -239,24 +274,269 @@
 </section>
 
 <!-- CTA -->
-<section class="py-16 bg-gradient-to-r from-[#1E3A5F] to-[#2D486D] text-white text-center"><div class="max-w-[1280px] mx-auto px-8"><div class="max-w-2xl mx-auto"><span class="material-symbols-outlined text-5xl mb-4 text-[#F97316]">chat</span><h2 class="font-h2 text-h2 mb-4">Vous avez un projet similaire ?</h2><p class="text-white/80 mb-8">Contactez-nous pour discuter de votre projet et obtenir un devis personnalisé.</p><div class="flex flex-wrap gap-4 justify-center"><a href="contact.html" class="bg-[#F97316] text-white px-8 py-4 rounded-lg font-button hover:bg-[#EA580C] transition-all shadow-lg">📞 Nous contacter</a><a href="demande-projet.html" class="border border-white/30 text-white px-8 py-4 rounded-lg font-button hover:bg-white/10 transition-all">📝 Demander un projet</a></div></div></div></section>
+<section class="py-16 bg-gradient-to-r from-[#1E3A5F] to-[#2D486D] text-white text-center"><div class="max-w-[1280px] mx-auto px-8"><div class="max-w-2xl mx-auto"><span class="material-symbols-outlined text-5xl mb-4 text-[#F97316]">chat</span><h2 class="font-h2 text-h2 mb-4">Vous avez un projet similaire ?</h2><p class="text-white/80 mb-8">Contactez-nous pour discuter de votre projet et obtenir un devis personnalisé.</p><div class="flex flex-wrap gap-4 justify-center"><a href="contact.html" class="bg-[#F97316] text-white px-8 py-4 rounded-lg font-button hover:bg-[#EA580C] transition-all shadow-lg">📞 Nous contacter</a><a href="devis.html" class="border border-white/30 text-white px-8 py-4 rounded-lg font-button hover:bg-white/10 transition-all">📝 Demander un projet</a></div></div></div></section>
 </main>
+
+<!-- Modale pour les détails des projets -->
+<div id="projectModal" class="fixed inset-0 bg-black/70 z-50 opacity-0 invisible transition-all duration-300 flex items-center justify-center p-4">
+  <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto transform scale-95 transition-all duration-300">
+    <div class="sticky top-0 bg-white border-b border-slate-100 p-4 flex justify-between items-center">
+      <h3 id="modalTitle" class="text-2xl font-bold text-primary">Titre du projet</h3>
+      <button onclick="closeModal()" class="text-slate-400 hover:text-[#F97316] transition-colors p-2">
+        <span class="material-symbols-outlined text-3xl">close</span>
+      </button>
+    </div>
+    <div class="p-6">
+      <img id="modalImage" alt="" class="w-full h-80 object-cover rounded-xl mb-6"/>
+      <div id="modalContent" class="space-y-4">
+        <!-- Contenu dynamique injecté via JS -->
+      </div>
+      <div class="mt-8 flex justify-end">
+        <a href="contact.html" class="bg-[#F97316] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#EA580C] transition-all">📞 Me contacter pour ce projet</a>
+      </div>
+    </div>
+  </div>
+</div>
 
 <footer class="bg-[#1E3A5F] w-full py-12 px-8"><div class="max-w-[1280px] mx-auto flex flex-col md:flex-row justify-between items-center gap-6"><div class="text-lg font-black text-white">Informatis-web</div><div class="flex flex-wrap justify-center gap-6"><a href="#" class="text-sm text-white/80 hover:text-[#F97316] transition-all">Mentions Légales</a><a href="#" class="text-sm text-white/80 hover:text-[#F97316] transition-all">CGV</a><a href="#" class="text-sm text-white/80 hover:text-[#F97316] transition-all">Politique de Confidentialité</a><a href="#" class="text-sm text-white/80 hover:text-[#F97316] transition-all">Recrutement</a></div><div class="text-sm text-white/80 text-center md:text-right">© 2026 Informatis-web. Tous droits réservés. Expertise en ingénierie digitale.</div></div></footer>
 
 <script>
-// Filtres
+// Menu Mobile
+const menuBtn = document.getElementById('menuBtn');
+const closeMenuconst closeMenuBtn = document.getElementById('closeMenuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+
+function openMobileMenu() {
+    if (mobileMenu && mobileMenuOverlay) {
+        mobileMenu.classList.remove('-translate-x-full');
+        mobileMenuOverlay.classList.remove('opacity-0', 'invisible');
+        document.body.classList.add('no-scroll');
+    }
+}
+
+function closeMobileMenu() {
+    if (mobileMenu && mobileMenuOverlay) {
+        mobileMenu.classList.add('-translate-x-full');
+        mobileMenuOverlay.classList.add('opacity-0', 'invisible');
+        document.body.classList.remove('no-scroll');
+    }
+}
+
+if (menuBtn) menuBtn.addEventListener('click', openMobileMenu);
+if (closeMenuBtn) closeMenuBtn.addEventListener('click', closeMobileMenu);
+
+if (mobileMenuOverlay) {
+    mobileMenuOverlay.addEventListener('click', function(e) {
+        if (e.target === mobileMenuOverlay) closeMobileMenu();
+    });
+}
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeMobileMenu();
+});
+
+// Données des projets
+const projectsData = {
+    1: {
+        title: "Informatis-TS",
+        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop",
+        category: "Solution Logicielle",
+        description: "Application de gestion complète pour société de services en ingénierie informatique.",
+        fullDescription: "Informatis-TS est une solution logicielle complète développée sur mesure pour une société de services en ingénierie informatique. L'application permet de gérer l'ensemble des processus métier : gestion des projets, suivi des ressources, facturation, et reporting avancé.",
+        technologies: ["React", "Node.js", "MongoDB", "Docker", "AWS"],
+        duration: "6 mois",
+        client: "TechCorp Solutions",
+        features: [
+            "Gestion complète des projets et des tâches",
+            "Suivi des ressources et du temps passé",
+            "Facturation automatisée",
+            "Tableaux de bord personnalisés",
+            "API RESTful pour intégrations tierces"
+        ]
+    },
+    2: {
+        title: "Café-spectacle",
+        image: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800&h=500&fit=crop",
+        category: "Événementiel",
+        description: "Plateforme de réservation pour salles de spectacle et gestion d'événements culturels.",
+        fullDescription: "Café-spectacle est une plateforme complète de réservation en ligne pour les salles de spectacles. Elle permet aux utilisateurs de consulter la programmation, réserver des places, et payer en ligne. Côté administration, les gestionnaires peuvent créer des événements, gérer les disponibilités et suivre les ventes en temps réel.",
+        technologies: ["PHP", "MySQL", "Stripe", "Bootstrap", "jQuery"],
+        duration: "4 mois",
+        client: "Théâtre de la Ville",
+        features: [
+            "Réservation en ligne 24/7",
+            "Sélection interactive des places",
+            "Paiement sécurisé Stripe",
+            "Gestion des événements et des tarifs",
+            "Export des données de vente"
+        ]
+    },
+    3: {
+        title: "Internis Média",
+        image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&h=500&fit=crop",
+        category: "Agence Digitale",
+        description: "Refonte complète du site vitrine pour une agence de communication digitale.",
+        fullDescription: "Internis Média est une agence de communication digitale qui souhaitait une refonte complète de son site vitrine. Le projet incluait la création d'une identité visuelle moderne, un portfolio interactif, et un système de gestion de contenu intuitif permettant à l'agence de mettre à jour ses réalisations facilement.",
+        technologies: ["WordPress", "Tailwind CSS", "JavaScript", "ACF Pro", "Elementor"],
+        duration: "3 mois",
+        client: "Internis Média",
+        features: [
+            "Design responsive et moderne",
+            "Portfolio dynamique avec filtres",
+            "Blog intégré",
+            "Formulaire de contact avancé",
+            "Optimisation SEO complète"
+        ]
+    },
+    4: {
+        title: "Site Minceur",
+        image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=500&fit=crop",
+        category: "Santé & Bien-être",
+        description: "Blog et boutique en ligne pour coach sportif avec programmes personnalisés.",
+        fullDescription: "Site Minceur est une plateforme complète pour un coach sportif spécialisé dans la perte de poids. Le site combine un blog riche en contenu, une boutique de produits, et un système de programmes personnalisés accessibles via abonnement.",
+        technologies: ["WooCommerce", "Elementor", "MemberPress", "Mailchimp", "RankMath SEO"],
+        duration: "5 mois",
+        client: "Sarah Fitness",
+        features: [
+            "Boutique e-commerce complète",
+            "Programmes d'abonnement",
+            "Blog avec catégories et tags",
+            "Newsletter intégrée",
+            "Espace membre sécurisé"
+        ]
+    },
+    5: {
+        title: "Observatoire du laxisme",
+        image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=500&fit=crop",
+        category: "Institutionnel",
+        description: "Plateforme d'information et de données pour observatoire national.",
+        fullDescription: "L'Observatoire du laxisme est une plateforme institutionnelle publique présentant des données et analyses sur les politiques publiques. Le site intègre des visualisations de données complexes, une base de données documentaire, et des fonctionnalités de recherche avancée.",
+        technologies: ["Django", "PostgreSQL", "D3.js", "Bootstrap", "ElasticSearch"],
+        duration: "8 mois",
+        client: "Ministère de la Justice",
+        features: [
+            "Visualisations de données interactives",
+            "Base documentaire avec recherche avancée",
+            "Export des rapports (PDF/Excel)",
+            "Espace presse",
+            "Accessibilité RGAA conforme"
+        ]
+    },
+    6: {
+        title: "DPN-PC",
+        image: "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=800&h=500&fit=crop",
+        category: "E-commerce",
+        description: "Boutique en ligne de matériel informatique haut de gamme.",
+        fullDescription: "DPN-PC est une boutique e-commerce spécialisée dans la vente de matériel informatique haut de gamme pour les professionnels et les passionnés. La plateforme intègre un catalogue produit complet, des fiches techniques détaillées, un système d'avis clients, et des options de paiement multiples.",
+        technologies: ["PrestaShop", "PayPal", "Stripe", "MySQL", "SCSS"],
+        duration: "7 mois",
+        client: "DPN Distribution",
+        features: [
+            "Catalogue produit avec filtres avancés",
+            "Fiches techniques et compatibilité",
+            "Avis et notations clients",
+            "Paiement sécurisé multi-moyens",
+            "Suivi de commande en temps réel"
+        ]
+    }
+};
+
+// Modale
+const modal = document.getElementById('projectModal');
+const modalTitle = document.getElementById('modalTitle');
+const modalImage = document.getElementById('modalImage');
+const modalContent = document.getElementById('modalContent');
+
+function openModal(projectId) {
+    const project = projectsData[projectId];
+    if (project) {
+        modalTitle.textContent = project.title;
+        modalImage.src = project.image;
+        modalImage.alt = project.title;
+        
+        modalContent.innerHTML = `
+            <div class="flex flex-wrap gap-2 mb-4">
+                <span class="px-3 py-1 bg-[#F97316]/10 text-[#F97316] rounded-full text-sm font-semibold">${project.category}</span>
+                <span class="px-3 py-1 bg-[#F1F5F9] text-primary rounded-full text-sm">Durée : ${project.duration}</span>
+                <span class="px-3 py-1 bg-[#F1F5F9] text-primary rounded-full text-sm">Client : ${project.client}</span>
+            </div>
+            <p class="text-slate-500">${project.description}</p>
+            <div class="bg-[#F1F5F9] p-4 rounded-xl">
+                <h4 class="font-bold text-primary mb-2">📋 Description détaillée</h4>
+                <p class="text-slate-600">${project.fullDescription}</p>
+            </div>
+            <div>
+                <h4 class="font-bold text-primary mb-3">⚙️ Technologies utilisées</h4>
+                <div class="flex flex-wrap gap-2">
+                    ${project.technologies.map(tech => `<span class="px-3 py-1 bg-[#1E3A5F] text-white rounded-lg text-sm">${tech}</span>`).join('')}
+                </div>
+            </div>
+            <div>
+                <h4 class="font-bold text-primary mb-3">✨ Fonctionnalités principales</h4>
+                <ul class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                    ${project.features.map(feature => `<li class="flex items-center gap-2 text-sm text-slate-600"><span class="material-symbols-outlined text-[#F97316] text-base">check_circle</span> ${feature}</li>`).join('')}
+                </ul>
+            </div>
+        `;
+        
+        modal.classList.remove('opacity-0', 'invisible');
+        modal.querySelector('.bg-white').classList.remove('scale-95');
+        document.body.classList.add('no-scroll');
+    }
+}
+
+function closeModal() {
+    modal.classList.add('opacity-0', 'invisible');
+    modal.querySelector('.bg-white').classList.add('scale-95');
+    document.body.classList.remove('no-scroll');
+}
+
+// Fermer la modale en cliquant sur l'overlay
+modal.addEventListener('click', function(e) {
+    if (e.target === modal) closeModal();
+});
+
+// Fermer avec Echap
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && !modal.classList.contains('invisible')) closeModal();
+});
+
+// Filtres projets
 const filterBtns = document.querySelectorAll('.filter-btn');
 const projects = document.querySelectorAll('.project-item');
-filterBtns.forEach(btn => { btn.addEventListener('click', () => { filterBtns.forEach(b => { b.classList.remove('active', 'bg-[#F97316]', 'text-white'); b.classList.add('bg-[#F1F5F9]', 'text-[#1E3A5F]'); }); btn.classList.remove('bg-[#F1F5F9]', 'text-[#1E3A5F]'); btn.classList.add('active', 'bg-[#F97316]', 'text-white'); const filter = btn.dataset.filter; projects.forEach(project => { if (filter === 'all' || project.dataset.category === filter) { project.style.display = 'block'; } else { project.style.display = 'none'; } }); }); });
-// Menu mobile
-const menuBtn = document.getElementById('menuBtn');
-const mobileMenu = document.getElementById('mobileMenu');
-if (menuBtn && mobileMenu) { menuBtn.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); }); }
-const mobileExpertiseBtn = document.getElementById('mobileExpertiseBtn');
-const mobileExpertiseMenu = document.getElementById('mobileExpertiseMenu');
-if (mobileExpertiseBtn && mobileExpertiseMenu) { mobileExpertiseBtn.addEventListener('click', () => { mobileExpertiseMenu.classList.toggle('hidden'); }); }
-document.querySelectorAll('a[href^="#"]').forEach(anchor => { anchor.addEventListener('click', function(e) { const target = document.querySelector(this.getAttribute('href')); if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); } }); });
+
+filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        filterBtns.forEach(b => {
+            b.classList.remove('active', 'bg-[#F97316]', 'text-white');
+            b.classList.add('bg-[#F1F5F9]', 'text-[#1E3A5F]');
+        });
+        btn.classList.remove('bg-[#F1F5F9]', 'text-[#1E3A5F]');
+        btn.classList.add('active', 'bg-[#F97316]', 'text-white');
+        
+        const filter = btn.dataset.filter;
+        projects.forEach(project => {
+            if (filter === 'all' || project.dataset.category === filter) {
+                project.style.display = 'block';
+            } else {
+                project.style.display = 'none';
+            }
+        });
+    });
+});
+
+// Smooth scroll ancres
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            closeMobileMenu();
+        }
+    });
+});
 </script>
 </body>
 </html>
