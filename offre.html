@@ -7,6 +7,7 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://www.paypal.com/sdk/js?client-id=sb&currency=EUR"></script>
 <script>
   tailwind.config = {
     darkMode: "class",
@@ -105,17 +106,26 @@
     vertical-align: middle;
   }
   body { font-family: 'Inter', sans-serif; }
+  .active-tab { color: #F97316 !important; border-bottom: 2px solid #F97316; padding-bottom: 4px; }
 </style>
 </head>
 <body class="bg-surface text-on-surface selection:bg-secondary-container selection:text-white">
 
-<!-- HEADER -->
+<!-- HEADER COMPLET AVEC HAMBURGER À GAUCHE -->
 <header class="bg-white border-b border-slate-100 shadow-[0px_4px_20px_rgba(30,58,95,0.08)] sticky top-0 z-50">
 <nav class="flex justify-between items-center h-20 px-8 max-w-[1280px] mx-auto w-full">
-<a href="index.html" class="text-xl font-bold text-[#1E3A5F] tracking-tighter hover:text-[#F97316] transition-colors">Informatis-web</a>
-<div class="hidden md:flex items-center gap-8">
-<a href="index.html#services" class="font-semibold text-sm uppercase tracking-wider text-[#1E3A5F] opacity-80 hover:opacity-100 hover:text-[#F97316] transition-colors">Services</a>
-<a href="index.html#portfolio" class="font-semibold text-sm uppercase tracking-wider text-[#1E3A5F] opacity-80 hover:opacity-100 hover:text-[#F97316] transition-colors">Portfolio</a>
+<!-- Hamburger à gauche (visible sur mobile seulement) -->
+<button id="menuBtn" class="md:hidden text-[#1E3A5F] focus:outline-none order-1">
+    <span class="material-symbols-outlined">menu</span>
+</button>
+
+<!-- Logo au centre sur mobile, à gauche sur desktop -->
+<a href="index.html" class="text-xl font-bold text-[#1E3A5F] tracking-tighter hover:text-[#F97316] transition-colors order-2 md:order-1">Informatis-web</a>
+
+<!-- Menu Desktop -->
+<div class="hidden md:flex items-center gap-8 order-3">
+<a href="services.html" class="font-semibold text-sm uppercase tracking-wider text-[#1E3A5F] opacity-80 hover:opacity-100 hover:text-[#F97316] transition-colors">Services</a>
+<a href="portfolio.html" class="font-semibold text-sm uppercase tracking-wider text-[#1E3A5F] opacity-80 hover:opacity-100 hover:text-[#F97316] transition-colors">Portfolio</a>
 <div class="relative group">
 <a href="#" class="font-semibold text-sm uppercase tracking-wider text-[#1E3A5F] opacity-80 hover:opacity-100 hover:text-[#F97316] transition-colors flex items-center gap-1">Expertise <span class="material-symbols-outlined text-base">expand_more</span></a>
 <div class="absolute top-full left-0 w-64 bg-white shadow-lg rounded-lg py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50 border border-slate-100">
@@ -123,11 +133,27 @@
 <a href="expertise/seo.html" class="block px-4 py-3 text-sm text-[#1E3A5F] hover:bg-[#F1F5F9] hover:text-[#F97316] transition-colors"><span class="material-symbols-outlined text-base mr-2">trending_up</span> SEO & SEA</a>
 </div>
 </div>
-<a href="index.html#tarifs" class="font-semibold text-sm uppercase tracking-wider text-[#1E3A5F] opacity-80 hover:opacity-100 hover:text-[#F97316] transition-colors">Tarifs</a>
+<a href="tarifs.html" class="font-semibold text-sm uppercase tracking-wider text-[#1E3A5F] opacity-80 hover:opacity-100 hover:text-[#F97316] transition-colors">Tarifs</a>
 <a href="blog.html" class="font-semibold text-sm uppercase tracking-wider text-[#1E3A5F] opacity-80 hover:opacity-100 hover:text-[#F97316] transition-colors">Blog</a>
 </div>
-<a href="contact.html" class="bg-[#F97316] text-white px-6 py-2.5 rounded-lg font-button shadow-md hover:scale-[1.02] active:scale-95 transition-all">Contact</a>
+
+<!-- Contact à droite -->
+<a href="contact.html" class="bg-[#F97316] text-white px-6 py-2.5 rounded-lg font-button shadow-md hover:scale-[1.02] active:scale-95 transition-all order-4">Contact</a>
 </nav>
+
+<!-- Menu Mobile -->
+<div id="mobileMenu" class="hidden md:hidden bg-white border-t border-slate-100 py-4 px-8 flex flex-col gap-4 shadow-lg">
+<a href="services.html" class="font-semibold text-sm uppercase tracking-wider text-[#1E3A5F] hover:text-[#F97316] transition-colors py-2">Services</a>
+<a href="portfolio.html" class="font-semibold text-sm uppercase tracking-wider text-[#1E3A5F] hover:text-[#F97316] transition-colors py-2">Portfolio</a>
+<div class="relative"><button id="mobileExpertiseBtn" class="font-semibold text-sm uppercase tracking-wider text-[#1E3A5F] hover:text-[#F97316] transition-colors py-2 flex items-center gap-1 w-full text-left">Expertise <span class="material-symbols-outlined text-base">expand_more</span></button>
+<div id="mobileExpertiseMenu" class="hidden pl-4 flex flex-col gap-2 mt-1">
+<a href="expertise/hebergement.html" class="block py-2 text-sm text-[#1E3A5F] hover:text-[#F97316] transition-colors">Hébergement & Domaines</a>
+<a href="expertise/seo.html" class="block py-2 text-sm text-[#1E3A5F] hover:text-[#F97316] transition-colors">SEO & SEA</a>
+</div></div>
+<a href="tarifs.html" class="font-semibold text-sm uppercase tracking-wider text-[#1E3A5F] hover:text-[#F97316] transition-colors py-2">Tarifs</a>
+<a href="blog.html" class="font-semibold text-sm uppercase tracking-wider text-[#1E3A5F] hover:text-[#F97316] transition-colors py-2">Blog</a>
+<a href="contact.html" class="bg-[#F97316] text-white px-4 py-2 rounded-lg font-button text-center hover:bg-[#EA580C] transition-all">Contact</a>
+</div>
 </header>
 
 <main class="py-xl">
@@ -168,10 +194,10 @@
 </div>
 </div>
 
-<!-- Colonne droite : Formulaire de souscription -->
+<!-- Colonne droite : Formulaire de souscription + PayPal -->
 <div class="bg-white p-8 md:p-10 rounded-xl shadow-xl">
 <h2 class="font-h2 text-h2 text-primary mb-2">Profiter de l'offre</h2>
-<p class="text-slate-500 mb-6">Remplissez ce formulaire pour bénéficier du Pack Vitrine Essentiel. Notre équipe vous recontactera sous 24h.</p>
+<p class="text-slate-500 mb-6">Remplissez ce formulaire et choisissez votre mode de paiement.</p>
 
 <form id="offreForm" class="space-y-6" onsubmit="event.preventDefault(); showSuccessMessage();">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -246,6 +272,13 @@
 Profiter de l'offre
 </button>
 
+<!-- Section PayPal -->
+<div class="mt-6 pt-6 border-t border-slate-200">
+<p class="text-sm text-slate-500 text-center mb-3">ou payez directement par PayPal</p>
+<div id="paypal-offre-container" class="max-w-xs mx-auto"></div>
+<p class="text-xs text-slate-400 text-center mt-3">Paiement sécurisé par PayPal - Sans engagement</p>
+</div>
+
 <p class="text-xs text-slate-400 text-center mt-4">* Champs obligatoires. Paiement sécurisé. Facture envoyée par email.</p>
 </form>
 
@@ -276,6 +309,36 @@ Profiter de l'offre
 </footer>
 
 <script>
+// Script PayPal pour le pack offre
+paypal.Buttons({
+    style: {
+        color: 'gold',
+        shape: 'pill',
+        label: 'paypal',
+        height: 40
+    },
+    createOrder: function(data, actions) {
+        return actions.order.create({
+            purchase_units: [{
+                amount: {
+                    value: '24.90'
+                },
+                description: 'Pack Vitrine Essentiel - Informatis-web'
+            }]
+        });
+    },
+    onApprove: function(data, actions) {
+        return actions.order.capture().then(function(details) {
+            alert('Merci ' + details.payer.name.given_name + ' ! Votre paiement a été effectué avec succès.');
+            window.location.href = 'merci-offre.html';
+        });
+    },
+    onError: function(err) {
+        console.error('Erreur PayPal:', err);
+        alert('Une erreur est survenue. Veuillez réessayer.');
+    }
+}).render('#paypal-offre-container');
+
 function showSuccessMessage() {
     document.getElementById('offreForm').style.display = 'none';
     document.getElementById('successMessage').classList.remove('hidden');
@@ -286,6 +349,22 @@ function resetForm() {
     document.getElementById('offreForm').reset();
     document.getElementById('offreForm').style.display = 'block';
     document.getElementById('successMessage').classList.add('hidden');
+}
+
+// Menu hamburger pour mobile
+const menuBtn = document.getElementById('menuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+    });
+}
+const mobileExpertiseBtn = document.getElementById('mobileExpertiseBtn');
+const mobileExpertiseMenu = document.getElementById('mobileExpertiseMenu');
+if (mobileExpertiseBtn && mobileExpertiseMenu) {
+    mobileExpertiseBtn.addEventListener('click', function() {
+        mobileExpertiseMenu.classList.toggle('hidden');
+    });
 }
 </script>
 </body>
