@@ -112,7 +112,15 @@
 <!-- HEADER -->
 <header class="bg-white border-b border-slate-100 shadow-[0px_4px_20px_rgba(30,58,95,0.08)] sticky top-0 z-50">
 <nav class="flex justify-between items-center h-20 px-8 max-w-[1280px] mx-auto w-full">
-<span class="text-xl font-bold text-[#1E3A5F] tracking-tighter">Informatis-web</span>
+<!-- Bouton Burger Mobile à GAUCHE -->
+<button id="menuBtn" class="md:hidden text-[#1E3A5F] p-2 hover:bg-slate-100 rounded-lg transition-colors z-50">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+
+<!-- Logo - centré sur mobile, à gauche sur desktop -->
+<a href="index.html" class="text-xl font-bold text-[#1E3A5F] tracking-tighter absolute left-1/2 transform -translate-x-1/2 md:static md:transform-none">Informatis-web</a>
+
+<!-- Menu Desktop -->
 <div class="hidden md:flex items-center gap-8">
 <a href="index.html#services" class="font-semibold text-sm uppercase tracking-wider text-[#1E3A5F] opacity-80 hover:opacity-100 hover:text-[#F97316] transition-colors">Services</a>
 <a href="index.html#portfolio" class="font-semibold text-sm uppercase tracking-wider text-[#1E3A5F] opacity-80 hover:opacity-100 hover:text-[#F97316] transition-colors">Portfolio</a>
@@ -129,8 +137,37 @@
 <a href="index.html#tarifs" class="font-semibold text-sm uppercase tracking-wider text-[#1E3A5F] opacity-80 hover:opacity-100 hover:text-[#F97316] transition-colors">Tarifs</a>
 <a href="blog.html" class="font-semibold text-sm uppercase tracking-wider text-[#1E3A5F] opacity-80 hover:opacity-100 hover:text-[#F97316] transition-colors">Blog</a>
 </div>
-<a href="contact.html" class="bg-[#F97316] text-white px-6 py-2.5 rounded-lg font-button shadow-md hover:scale-[1.02] active:scale-95 transition-all">Contact</a>
+
+<!-- Bouton Contact Desktop -->
+<a href="contact.html" class="hidden md:inline-block bg-[#F97316] text-white px-6 py-2.5 rounded-lg font-button shadow-md hover:scale-[1.02] active:scale-95 transition-all">Contact</a>
 </nav>
+
+<!-- Menu Mobile - qui glisse depuis la GAUCHE -->
+<div id="mobileMenu" class="fixed inset-0 bg-white z-40 transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+<div class="flex justify-between items-center p-6 border-b border-slate-100">
+<span class="text-xl font-bold text-[#1E3A5F] tracking-tighter">Menu</span>
+<button id="closeMenuBtn" class="text-[#1E3A5F] p-2 hover:bg-slate-100 rounded-lg">
+<span class="material-symbols-outlined text-3xl">close</span>
+</button>
+</div>
+<div class="flex flex-col p-6 gap-4">
+<a href="index.html#services" class="font-semibold text-base text-[#1E3A5F] py-2 hover:text-[#F97316] transition-colors" onclick="closeMobileMenu()">Services</a>
+<a href="index.html#portfolio" class="font-semibold text-base text-[#1E3A5F] py-2 hover:text-[#F97316] transition-colors" onclick="closeMobileMenu()">Portfolio</a>
+<div class="border-t border-slate-100 pt-2">
+<p class="font-semibold text-sm uppercase tracking-wider text-slate-400 mb-2">Expertise</p>
+<div class="pl-4 flex flex-col gap-2">
+<a href="expertise/hebergement.html" class="text-sm text-[#1E3A5F] py-2 hover:text-[#F97316] transition-colors flex items-center gap-2" onclick="closeMobileMenu()"><span class="material-symbols-outlined text-base">cloud</span> Hébergement & Domaines</a>
+<a href="expertise/seo.html" class="text-sm text-[#1E3A5F] py-2 hover:text-[#F97316] transition-colors flex items-center gap-2" onclick="closeMobileMenu()"><span class="material-symbols-outlined text-base">trending_up</span> SEO & SEA</a>
+<a href="starter.html" class="text-sm text-[#1E3A5F] py-2 hover:text-[#F97316] transition-colors flex items-center gap-2" onclick="closeMobileMenu()"><span class="material-symbols-outlined text-base">rocket_launch</span> Offre Starter</a>
+<a href="business-pro.html" class="text-sm text-[#1E3A5F] py-2 hover:text-[#F97316] transition-colors flex items-center gap-2" onclick="closeMobileMenu()"><span class="material-symbols-outlined text-base">star</span> Offre Business Pro</a>
+<a href="enterprise.html" class="text-sm text-[#1E3A5F] py-2 hover:text-[#F97316] transition-colors flex items-center gap-2" onclick="closeMobileMenu()"><span class="material-symbols-outlined text-base">workspace_premium</span> Offre Enterprise</a>
+</div>
+</div>
+<a href="index.html#tarifs" class="font-semibold text-base text-[#1E3A5F] py-2 hover:text-[#F97316] transition-colors" onclick="closeMobileMenu()">Tarifs</a>
+<a href="blog.html" class="font-semibold text-base text-[#1E3A5F] py-2 hover:text-[#F97316] transition-colors" onclick="closeMobileMenu()">Blog</a>
+<a href="contact.html" class="bg-[#F97316] text-white text-center px-6 py-3 rounded-lg font-button mt-4 hover:bg-[#EA580C] transition-all" onclick="closeMobileMenu()">Contact</a>
+</div>
+</div>
 </header>
 
 <main class="py-xl">
@@ -282,16 +319,40 @@ Envoyer le message
 <div class="max-w-[1280px] mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
 <div class="text-lg font-black text-white">Informatis-web</div>
 <div class="flex flex-wrap justify-center gap-6">
-<a href="#" class="text-sm text-white/80 hover:text-[#F97316] transition-all">Mentions Légales</a>
-<a href="#" class="text-sm text-white/80 hover:text-[#F97316] transition-all">CGV</a>
-<a href="#" class="text-sm text-white/80 hover:text-[#F97316] transition-all">Politique de Confidentialité</a>
-<a href="#" class="text-sm text-white/80 hover:text-[#F97316] transition-all">Recrutement</a>
+<a href="mentions-legales.html" class="text-sm text-white/80 hover:text-[#F97316] transition-all">Mentions Légales</a>
+<a href="cgv.html" class="text-sm text-white/80 hover:text-[#F97316] transition-all">CGV</a>
+<a href="politique-confidentialite.html" class="text-sm text-white/80 hover:text-[#F97316] transition-all">Politique de Confidentialité</a>
+<a href="recrutement.html" class="text-sm text-white/80 hover:text-[#F97316] transition-all">Recrutement</a>
 </div>
 <div class="text-sm text-white/80 text-center md:text-right">© 2026 Informatis-web. Tous droits réservés. Expertise en ingénierie digitale.</div>
 </div>
 </footer>
 
 <script>
+// Menu Mobile
+const menuBtn = document.getElementById('menuBtn');
+const closeMenuBtn = document.getElementById('closeMenuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+
+function openMobileMenu() {
+    mobileMenu.classList.remove('-translate-x-full');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeMobileMenu() {
+    mobileMenu.classList.add('-translate-x-full');
+    document.body.style.overflow = '';
+}
+
+if (menuBtn) menuBtn.addEventListener('click', openMobileMenu);
+if (closeMenuBtn) closeMenuBtn.addEventListener('click', closeMobileMenu);
+
+// Fermer le menu si on clique sur un lien
+document.querySelectorAll('#mobileMenu a').forEach(link => {
+    link.addEventListener('click', closeMobileMenu);
+});
+
+// Formulaire
 function showSuccessMessage() {
     document.getElementById('contactForm').style.display = 'none';
     document.getElementById('successMessage').classList.remove('hidden');
