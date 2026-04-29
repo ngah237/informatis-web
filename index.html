@@ -229,7 +229,6 @@
 <span class="text-white/60">/ mois</span>
 </div>
 <a href="starter.html" class="mt-6 bg-white text-[#1E3A5F] px-8 py-3 rounded-lg font-button hover:bg-[#F97316] hover:text-white transition-all">En savoir plus</a>
-<!-- Bouton PayPal -->
 <div class="mt-4 w-full max-w-xs">
     <div id="paypal-button-container" class="w-full"></div>
 </div>
@@ -338,11 +337,10 @@ paypal.Buttons({
         label: 'paypal',
         height: 40
     },
-    createOrder: function(data, actions) {
-        return actions.order.create({
+    createOrder: function(data, actions) {        return actions.order.create({
             purchase_units: [{
                 amount: {
-                                       value: '24.90'
+                    value: '24.90'
                 },
                 description: 'Pack Vitrine Essentiel - Informatis-web'
             }]
