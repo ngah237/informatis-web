@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html class="light" lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Conseil & Stratégie Digitale | Informatis-web</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          primary: "#022448",
+          surface: "#f9f9ff",
+          "on-surface": "#111c2d",
+        },
+        fontFamily: {
+          "body-md": ["Inter"],
+          button: ["Inter"],
+          h1: ["Inter"],
+          h2: ["Inter"],
+        },
+        fontSize: {
+          "body-md": ["16px", { lineHeight: "1.5", fontWeight: "400" }],
+          button: ["16px", { lineHeight: "1", fontWeight: "600" }],
+          h1: ["48px", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "700" }],
+          h2: ["36px", { lineHeight: "1.2", letterSpacing: "-0.01em", fontWeight: "700" }],
+        }
+      }
+    }
+  }
+</script>
+<style>
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    vertical-align: middle;
+  }
+  body { font-family: 'Inter', sans-serif; }
+  .no-scroll { overflow: hidden; }
+</style>
+</head>
+<body class="bg-surface text-on-surface">
+
+<!-- HEADER -->
+<header class="bg-white border-b border-slate-100 shadow-[0px_4px_20px_rgba(30,58,95,0.08)] sticky top-0 z-50">
+<nav class="flex justify-between items-center h-20 px-8 max-w-[1280px] mx-auto w-full">
+<button id="menuBtn" class="md:hidden text-[#1E3A5F] hover:bg-slate-100 rounded-lg p-2 transition-colors order-1">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+<a href="../index.html" class="text-xl font-bold text-[#1E3A5F] tracking-tighter hover:text-[#F97316] transition-colors absolute left-1/2 transform -translate-x-1/2 md:static md:transform-none order-2 md:order-1">Informatis-web</a>
+<div class="hidden md:flex items-center gap-8 order-3">
+<a href="../services.html" class="font-semibold text-sm uppercase tracking-wider text-[#1E3A5F] opacity-80 hover:opacity-100 hover:text-[#F97316] transition-colors">Services</a>
+<a href="../portfolio.html" class="font-semibold text-sm uppercase tracking-wider text-[#1E3A5F] opacity-80 hover:opacity-100 hover:text-[#F97316] transition-colors">Portfolio</a>
+<div class="relative group">
+<a href="#" class="font-semibold text-sm uppercase tracking-wider text-[#1E3A5F] opacity-80 hover:opacity-100 hover:text-[#F97316] transition-colors flex items-center gap-1">Expertise <span class="material-symbols-outlined text-base">expand_more</span></a>
+<div class="absolute top-full left-0 w-64 bg-white shadow-lg rounded-lg py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50 border border-slate-100">
+<a href="../expertise/hebergement.html" class="block px-4 py-3 text-sm text-[#1E3A5F] hover:bg-[#F1F5F9] hover:text-[#F97316] transition-colors"><span class="material-symbols-outlined text-base mr-2">cloud</span> Hébergement & Domaines</a>
+<a href="../expertise/seo.html" class="block px-4 py-3 text-sm text-[#1E3A5F] hover:bg-[#F1F5F9] hover:text-[#F97316] transition-colors"><span class="material-symbols-outlined text-base mr-2">trending_up</span> SEO & SEA</a>
+<a href="../starter.html" class="block px-4 py-3 text-sm text-[#1E3A5F] hover:bg-[#F1F5F9] hover:text-[#F97316] transition-colors"><span class="material-symbols-outlined text-base mr-2">rocket_launch</span> Offre Starter</a>
+<a href="../business-pro.html" class="block px-4 py-3 text-sm text-[#1E3A5F] hover:bg-[#F1F5F9] hover:text-[#F97316] transition-colors"><span class="material-symbols-outlined text-base mr-2">star</span> Offre Business Pro</a>
+<a href="../enterprise.html" class="block px-4 py-3 text-sm text-[#1E3A5F] hover:bg-[#F1F5F9] hover:text-[#F97316] transition-colors"><span class="material-symbols-outlined text-base mr-2">workspace_premium</span> Offre Enterprise</a>
+</div>
+</div>
+<a href="../index.html#tarifs" class="font-semibold text-sm uppercase tracking-wider text-[#1E3A5F] opacity-80 hover:opacity-100 hover:text-[#F97316] transition-colors">Tarifs</a>
+<a href="../blog.html" class="font-semibold text-sm uppercase tracking-wider text-[#1E3A5F] opacity-80 hover:opacity-100 hover:text-[#F97316] transition-colors">Blog</a>
+</div>
+<div class="flex items-center gap-4 order-4">
+<a href="../contact.html" class="hidden md:inline-block bg-[#F97316] text-white px-6 py-2.5 rounded-lg font-button shadow-md hover:scale-[1.02] active:scale-95 transition-all">Contact</a>
+</div>
+</nav>
+</header>
+
+<!-- Menu Mobile -->
+<div id="mobileMenuOverlay" class="fixed inset-0 bg-black/50 z-40 opacity-0 invisible transition-all duration-300 md:hidden">
+<div id="mobileMenu" class="absolute top-0 left-0 w-80 h-full bg-white shadow-2xl z-50 transform -translate-x-full transition-transform duration-300 ease-in-out">
+<div class="flex justify-between items-center p-6 border-b border-slate-100">
+<span class="text-xl font-bold text-[#1E3A5F] tracking-tighter">Menu</span>
+<button id="closeMenuBtn" class="text-[#1E3A5F] p-2 hover:bg-slate-100 rounded-lg transition-colors">
+<span class="material-symbols-outlined text-3xl">close</span>
+</button>
+</div>
+<div class="flex flex-col p-6 gap-4 overflow-y-auto h-[calc(100%-80px)]">
+<a href="../services.html" class="font-semibold text-base text-[#1E3A5F] py-2 hover:text-[#F97316] transition-colors" onclick="closeMobileMenu()">Services</a>
+<a href="../portfolio.html" class="font-semibold text-base text-[#1E3A5F] py-2 hover:text-[#F97316] transition-colors" onclick="closeMobileMenu()">Portfolio</a>
+<div class="border-t border-slate-100 pt-2">
+<p class="font-semibold text-sm uppercase tracking-wider text-slate-400 mb-3">Expertise</p>
+<div class="pl-4 flex flex-col gap-2">
+<a href="../expertise/hebergement.html" class="text-sm text-[#1E3A5F] py-2 hover:text-[#F97316] transition-colors flex items-center gap-2" onclick="closeMobileMenu()"><span class="material-symbols-outlined text-base">cloud</span> Hébergement & Domaines</a>
+<a href="../expertise/seo.html" class="text-sm text-[#1E3A5F] py-2 hover:text-[#F97316] transition-colors flex items-center gap-2" onclick="closeMobileMenu()"><span class="material-symbols-outlined text-base">trending_up</span> SEO & SEA</a>
+<a href="../starter.html" class="text-sm text-[#1E3A5F] py-2 hover:text-[#F97316] transition-colors flex items-center gap-2" onclick="closeMobileMenu()"><span class="material-symbols-outlined text-base">rocket_launch</span> Offre Starter</a>
+<a href="../business-pro.html" class="text-sm text-[#1E3A5F] py-2 hover:text-[#F97316] transition-colors flex items-center gap-2" onclick="closeMobileMenu()"><span class="material-symbols-outlined text-base">star</span> Offre Business Pro</a>
+<a href="../enterprise.html" class="text-sm text-[#1E3A5F] py-2 hover:text-[#F97316] transition-colors flex items-center gap-2" onclick="closeMobileMenu()"><span class="material-symbols-outlined text-base">workspace_premium</span> Offre Enterprise</a>
+</div>
+</div>
+<a href="../index.html#tarifs" class="font-semibold text-base text-[#1E3A5F] py-2 hover:text-[#F97316] transition-colors" onclick="closeMobileMenu()">Tarifs</a>
+<a href="../blog.html" class="font-semibold text-base text-[#1E3A5F] py-2 hover:text-[#F97316] transition-colors" onclick="closeMobileMenu()">Blog</a>
+<a href="../contact.html" class="bg-[#F97316] text-white text-center px-6 py-3 rounded-lg font-button mt-4 hover:bg-[#EA580C] transition-all" onclick="closeMobileMenu()">Contact</a>
+</div>
+</div>
+</div>
+
+<main class="py-xl">
+<div class="max-w-[1280px] mx-auto px-8">
+<div class="mb-8"><a href="../services.html" class="inline-flex items-center gap-2 text-[#F97316] hover:gap-3 transition-all"><span class="material-symbols-outlined">arrow_back</span> Retour aux services</a></div>
+
+<div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+<div class="h-96 overflow-hidden relative">
+  <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=600&fit=crop" alt="Conseil et stratégie digitale" class="w-full h-full object-cover"/>
+  <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+  <div class="absolute bottom-6 left-6">
+    <span class="text-sm font-semibold bg-[#F97316] text-white px-3 py-1 rounded-full uppercase tracking-wider">Stratégie</span>
+  </div>
+</div>
+
+<div class="p-8 md:p-12">
+<h1 class="font-h1 text-h1 text-primary mb-4">Conseil & Stratégie Digitale</h1>
+<p class="text-body-lg text-slate-600 mb-8">Audit technique, étude de faisabilité et définition de votre feuille de route digitale pour un ROI optimal.</p>
+
+<div class="grid md:grid-cols-3 gap-8 mb-8">
+  <div class="bg-[#F1F5F9] p-4 rounded-xl text-center">
+    <span class="material-symbols-outlined text-[#F97316] text-3xl">insights</span>
+    <p class="text-sm text-slate-500 mt-1">Méthodologie</p>
+    <p class="font-bold text-primary">Agile & Data-driven</p>
+  </div>
+  <div class="bg-[#F1F5F9] p-4 rounded-xl text-center">
+    <span class="material-symbols-outlined text-[#F97316] text-3xl">group</span>
+    <p class="text-sm text-slate-500 mt-1">Accompagnement</p>
+    <p class="font-bold text-primary">Sur-mesure</p>
+  </div>
+  <div class="bg-[#F1F5F9] p-4 rounded-xl text-center">
+    <span class="material-symbols-outlined text-[#F97316] text-3xl">trending_up</span>
+    <p class="text-sm text-slate-500 mt-1">Objectif</p>
+    <p class="font-bold text-primary">ROI mesurable</p>
+  </div>
+</div>
+
+<div class="prose prose-slate max-w-none">
+  <h2 class="text-2xl font-bold text-primary mt-8 mb-4">📋 Notre approche</h2>
+  <p class="text-slate-600 mb-6">Notre équipe d'experts vous accompagne dans la définition et la mise en œuvre de votre stratégie digitale. Nous réalisons un audit complet de votre présence en ligne, analysons votre marché et votre concurrence, puis définissons une feuille de route claire et mesurable.</p>
+  
+  <h2 class="text-2xl font-bold text-primary mt-8 mb-4">🔍 Nos missions</h2>
+  <ul class="grid grid-cols-1 md:grid-cols-2 gap-2 mb-6">
+    <li class="flex items-center gap-2 text-sm text-slate-600"><span class="material-symbols-outlined text-[#F97316] text-base">check_circle</span> Audit de votre présence digitale</li>
+    <li class="flex items-center gap-2 text-sm text-slate-600"><span class="material-symbols-outlined text-[#F97316] text-base">check_circle</span> Analyse concurrentielle</li>
+    <li class="flex items-center gap-2 text-sm text-slate-600"><span class="material-symbols-outlined text-[#F97316] text-base">check_circle</span> Définition des KPI et objectifs</li>
+    <li class="flex items-center gap-2 text-sm text-slate-600"><span class="material-symbols-outlined text-[#F97316] text-base">check_circle</span> Feuille de route stratégique</li>
+    <li class="flex items-center gap-2 text-sm text-slate-600"><span class="material-symbols-outlined text-[#F97316] text-base">check_circle</span> Accompagnement à la mise en œuvre</li>
+    <li class="flex items-center gap-2 text-sm text-slate-600"><span class="material-symbols-outlined text-[#F97316] text-base">check_circle</span> Suivi et optimisation continue</li>
+  </ul>
+</div>
+
+<div class="mt-8 p-6 bg-gradient-to-r from-[#1E3A5F] to-[#2D486D] rounded-xl text-white">
+  <h3 class="font-bold text-xl mb-2">💡 Prêt à définir votre stratégie digitale ?</h3>
+  <p class="text-white/80 mb-4">Contactez-nous pour un audit gratuit de votre présence en ligne.</p>
+  <div class="flex flex-wrap gap-4">
+    <a href="../contact.html" class="inline-block bg-[#F97316] text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-[#EA580C] transition-all">📞 Nous contacter</a>
+    <a href="../devis.html" class="inline-block border border-white/30 text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-white/10 transition-all">📝 Demander un devis</a>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</main>
+
+<footer class="bg-[#1E3A5F] w-full py-12 px-8 mt-12">
+<div class="max-w-[1280px] mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="text-lg font-black text-white">Informatis-web</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a href="../mentions-legales.html" class="text-sm text-white/80 hover:text-[#F97316] transition-all">Mentions Légales</a>
+<a href="../cgv.html" class="text-sm text-white/80 hover:text-[#F97316] transition-all">CGV</a>
+<a href="../politique-confidentialite.html" class="text-sm text-white/80 hover:text-[#F97316] transition-all">Politique de Confidentialité</a>
+<a href="../recrutement.html" class="text-sm text-white/80 hover:text-[#F97316] transition-all">Recrutement</a>
+</div>
+<div class="text-sm text-white/80 text-center md:text-right">© 2026 Informatis-web. Tous droits réservés.</div>
+</div>
+</footer>
+
+<script>
+const menuBtn = document.getElementById('menuBtn');
+const closeMenuBtn = document.getElementById('closeMenuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+
+function openMobileMenu() {
+    if (mobileMenu && mobileMenuOverlay) {
+        mobileMenu.classList.remove('-translate-x-full');
+        mobileMenuOverlay.classList.remove('opacity-0', 'invisible');
+        document.body.classList.add('no-scroll');
+    }
+}
+
+function closeMobileMenu() {
+    if (mobileMenu && mobileMenuOverlay) {
+        mobileMenu.classList.add('-translate-x-full');
+        mobileMenuOverlay.classList.add('opacity-0', 'invisible');
+        document.body.classList.remove('no-scroll');
+    }
+}
+
+if (menuBtn) menuBtn.addEventListener('click', openMobileMenu);
+if (closeMenuBtn) closeMenuBtn.addEventListener('click', closeMobileMenu);
+
+if (mobileMenuOverlay) {
+    mobileMenuOverlay.addEventListener('click', function(e) {
+        if (e.target === mobileMenuOverlay) closeMobileMenu();
+    });
+}
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeMobileMenu();
+});
+</script>
+</body>
+</html>
