@@ -113,15 +113,10 @@
 <!-- HEADER -->
 <header class="bg-white border-b border-slate-100 shadow-[0px_4px_20px_rgba(30,58,95,0.08)] sticky top-0 z-50">
 <nav class="flex justify-between items-center h-20 px-8 max-w-[1280px] mx-auto w-full">
-<!-- Bouton Burger Mobile à GAUCHE -->
 <button id="menuBtn" class="md:hidden text-[#1E3A5F] hover:bg-slate-100 rounded-lg p-2 transition-colors order-1">
 <span class="material-symbols-outlined text-3xl">menu</span>
 </button>
-
-<!-- Logo centré sur mobile, à gauche sur desktop -->
 <a href="index.html" class="text-xl font-bold text-[#1E3A5F] tracking-tighter hover:text-[#F97316] transition-colors absolute left-1/2 transform -translate-x-1/2 md:static md:transform-none order-2 md:order-1">Informatis-web</a>
-
-<!-- Menu Desktop -->
 <div class="hidden md:flex items-center gap-8 order-3">
 <a href="index.html#services" class="font-semibold text-sm uppercase tracking-wider text-[#1E3A5F] opacity-80 hover:opacity-100 hover:text-[#F97316] transition-colors">Services</a>
 <a href="portfolio.html" class="font-semibold text-sm uppercase tracking-wider text-[#1E3A5F] opacity-80 hover:opacity-100 hover:text-[#F97316] transition-colors">Portfolio</a>
@@ -138,15 +133,13 @@
 <a href="index.html#tarifs" class="font-semibold text-sm uppercase tracking-wider text-[#1E3A5F] opacity-80 hover:opacity-100 hover:text-[#F97316] transition-colors">Tarifs</a>
 <a href="blog.html" class="font-semibold text-sm uppercase tracking-wider text-[#1E3A5F] opacity-80 hover:opacity-100 hover:text-[#F97316] transition-colors">Blog</a>
 </div>
-
 <div class="flex items-center gap-4 order-4">
-<!-- Bouton Contact Desktop -->
 <a href="contact.html" class="hidden md:inline-block bg-[#F97316] text-white px-6 py-2.5 rounded-lg font-button shadow-md hover:scale-[1.02] active:scale-95 transition-all">Contact</a>
 </div>
 </nav>
 </header>
 
-<!-- Menu Mobile - Overlay + Menu latéral -->
+<!-- Menu Mobile -->
 <div id="mobileMenuOverlay" class="fixed inset-0 bg-black/50 z-40 opacity-0 invisible transition-all duration-300 md:hidden">
 <div id="mobileMenu" class="absolute top-0 left-0 w-80 h-full bg-white shadow-2xl z-50 transform -translate-x-full transition-transform duration-300 ease-in-out">
 <div class="flex justify-between items-center p-6 border-b border-slate-100">
@@ -156,8 +149,7 @@
 </button>
 </div>
 <div class="flex flex-col p-6 gap-4 overflow-y-auto h-[calc(100%-80px)]">
-<a href="index.html#services" class="font-semibold text-base text-[#1E3A5F] py-2 hover:text-[#F97316] transition-colors" onclick="closeMobileMenu()">Services</a>
-<a href="portfolio.html" class="font-semibold text-base text-[#1E3A5F] py-2 hover:text-[#F97316] transition-colors" onclick="closeMobileMenu()">Portfolio</a>
+<a href="index.html#services" class="font-semibold text-base text-[#1E3A5F] py-2 hover:text-[#F97316] transition-colors" onclick="closeMobileMenu()">Services</a><a href="portfolio.html" class="font-semibold text-base text-[#1E3A5F] py-2 hover:text-[#F97316] transition-colors" onclick="closeMobileMenu()">Portfolio</a>
 <div class="border-t border-slate-100 pt-2">
 <p class="font-semibold text-sm uppercase tracking-wider text-slate-400 mb-3">Expertise</p>
 <div class="pl-4 flex flex-col gap-2">
@@ -176,7 +168,6 @@
 </div>
 
 <main>
-<!-- Hero Section -->
 <section class="relative bg-gradient-to-r from-[#1E3A5F] to-[#2D486D] text-white py-20 overflow-hidden">
 <div class="absolute inset-0 opacity-10"><div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_30%,#F97316_0%,transparent_50%)]"></div></div>
 <div class="max-w-[1280px] mx-auto px-8 relative z-10 text-center">
@@ -186,21 +177,25 @@
 </div>
 </section>
 
-<!-- Formulaire de candidature -->
 <section class="py-16 bg-white">
 <div class="max-w-[1280px] mx-auto px-8">
 <div class="grid lg:grid-cols-3 gap-12">
-<!-- Colonne gauche - Formulaire -->
 <div class="lg:col-span-2">
 <div class="bg-[#F1F5F9] rounded-2xl p-8 md:p-10">
 <h2 class="font-h2 text-h2 text-primary mb-2">Formulaire de candidature</h2>
 <p class="text-slate-500 mb-6">Remplissez ce formulaire pour postuler à une offre ou envoyez-nous une candidature spontanée.</p>
 
-<form id="candidatureForm" class="space-y-6" onsubmit="event.preventDefault(); showSuccessMessage();">
+<!-- Formulaire avec Web3Forms (attention: pour l'upload de fichiers, Web3Forms nécessite un plan payant) -->
+<!-- Pour les CV, nous recommandons de les envoyer par email ou d'utiliser un service comme Getform -->
+<form action="https://api.web3forms.com/submit" method="POST" class="space-y-6" enctype="multipart/form-data">
+    <input type="hidden" name="access_key" value="bbf39ec1-2e34-4662-b3eb-b91f1d5b54c3">
+    <input type="hidden" name="_subject" value="[Informatis-web] 👤 Nouvelle candidature spontanée">
+    <input type="checkbox" name="botcheck" style="display: none;">
+
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 <div>
 <label class="text-sm font-semibold text-slate-700 block mb-2">Civilité <span class="text-red-500">*</span></label>
-<select class="w-full bg-white border border-slate-200 rounded-lg p-3 focus:border-[#F97316] focus:ring-[#F97316] transition-all" required>
+<select name="civilite" class="w-full bg-white border border-slate-200 rounded-lg p-3 focus:border-[#F97316] focus:ring-[#F97316] transition-all" required>
 <option value="">Sélectionnez</option>
 <option>M.</option>
 <option>Mme</option>
@@ -208,24 +203,24 @@
 </div>
 <div>
 <label class="text-sm font-semibold text-slate-700 block mb-2">Nom & Prénom <span class="text-red-500">*</span></label>
-<input class="w-full bg-white border border-slate-200 rounded-lg p-3 focus:border-[#F97316] focus:ring-[#F97316] transition-all" placeholder="Jean Dupont" type="text" required/>
+<input name="nom" class="w-full bg-white border border-slate-200 rounded-lg p-3 focus:border-[#F97316] focus:ring-[#F97316] transition-all" placeholder="Jean Dupont" type="text" required/>
 </div>
 </div>
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 <div>
 <label class="text-sm font-semibold text-slate-700 block mb-2">Email <span class="text-red-500">*</span></label>
-<input class="w-full bg-white border border-slate-200 rounded-lg p-3 focus:border-[#F97316] focus:ring-[#F97316] transition-all" placeholder="jean@email.com" type="email" required/>
+<input name="email" class="w-full bg-white border border-slate-200 rounded-lg p-3 focus:border-[#F97316] focus:ring-[#F97316] transition-all" placeholder="jean@email.com" type="email" required/>
 </div>
 <div>
 <label class="text-sm font-semibold text-slate-700 block mb-2">Téléphone <span class="text-red-500">*</span></label>
-<input class="w-full bg-white border border-slate-200 rounded-lg p-3 focus:border-[#F97316] focus:ring-[#F97316] transition-all" placeholder="06 00 00 00 00" type="tel" required/>
+<input name="telephone" class="w-full bg-white border border-slate-200 rounded-lg p-3 focus:border-[#F97316] focus:ring-[#F97316] transition-all" placeholder="06 00 00 00 00" type="tel" required/>
 </div>
 </div>
 
 <div>
 <label class="text-sm font-semibold text-slate-700 block mb-2">Poste visé <span class="text-red-500">*</span></label>
-<select class="w-full bg-white border border-slate-200 rounded-lg p-3 focus:border-[#F97316] focus:ring-[#F97316] transition-all" required>
+<select name="poste" class="w-full bg-white border border-slate-200 rounded-lg p-3 focus:border-[#F97316] focus:ring-[#F97316] transition-all" required>
 <option value="">Sélectionnez</option>
 <option>Développeur Full Stack</option>
 <option>Consultant SEO</option>
@@ -237,20 +232,14 @@
 </div>
 
 <div>
-<label class="text-sm font-semibold text-slate-700 block mb-2">CV <span class="text-red-500">*</span></label>
-<input class="w-full bg-white border border-slate-200 rounded-lg p-3 focus:border-[#F97316] focus:ring-[#F97316] transition-all" type="file" accept=".pdf,.doc,.docx" required/>
-<p class="text-xs text-slate-400 mt-1">Format PDF, DOC ou DOCX (max. 5 Mo)</p>
+<label class="text-sm font-semibold text-slate-700 block mb-2">CV (lien ou texte) <span class="text-red-500">*</span></label>
+<textarea name="cv_lien" class="w-full bg-white border border-slate-200 rounded-lg p-3 focus:border-[#F97316] focus:ring-[#F97316] transition-all" placeholder="Indiquez un lien vers votre CV (Google Drive, LinkedIn, etc.) ou collez votre CV en texte" rows="3" required></textarea>
+<p class="text-xs text-slate-400 mt-1">Pour l'upload direct de fichiers, merci d'envoyer votre CV par email à rh@informatis-web.com</p>
 </div>
 
 <div>
-<label class="text-sm font-semibold text-slate-700 block mb-2">Lettre de motivation</label>
-<input class="w-full bg-white border border-slate-200 rounded-lg p-3 focus:border-[#F97316] focus:ring-[#F97316] transition-all" type="file" accept=".pdf,.doc,.docx"/>
-<p class="text-xs text-slate-400 mt-1">Optionnel. Format PDF, DOC ou DOCX (max. 5 Mo)</p>
-</div>
-
-<div>
-<label class="text-sm font-semibold text-slate-700 block mb-2">Message / Précisions</label>
-<textarea class="w-full bg-white border border-slate-200 rounded-lg p-3 focus:border-[#F97316] focus:ring-[#F97316] transition-all" placeholder="Parlez-nous de vous, de vos motivations, de vos compétences..." rows="5"></textarea>
+<label class="text-sm font-semibold text-slate-700 block mb-2">Lettre de motivation (optionnel)</label>
+<textarea name="lettre_motivation" class="w-full bg-white border border-slate-200 rounded-lg p-3 focus:border-[#F97316] focus:ring-[#F97316] transition-all" placeholder="Parlez-nous de vous, de vos motivations, de vos compétences..." rows="5"></textarea>
 </div>
 
 <div class="flex items-center gap-3">
@@ -265,18 +254,9 @@ Envoyer ma candidature
 
 <p class="text-xs text-slate-400 text-center mt-4">* Champs obligatoires. Vos données sont confidentielles.</p>
 </form>
-
-<!-- Message de succès -->
-<div id="successMessage" class="hidden mt-6 p-6 bg-green-50 border border-green-200 rounded-lg text-center">
-<span class="material-symbols-outlined text-green-500 text-5xl mb-3">check_circle</span>
-<h3 class="font-bold text-green-700 text-xl mb-2">Candidature envoyée !</h3>
-<p class="text-green-600">Merci pour votre candidature. Notre équipe RH l'étudiera et vous recontactera dans les plus brefs délais.</p>
-<button onclick="resetForm()" class="mt-4 bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600 transition-all">Envoyer une nouvelle candidature</button>
-</div>
 </div>
 </div>
 
-<!-- Colonne droite - Informations -->
 <div class="space-y-6">
 <div class="bg-gradient-to-r from-[#1E3A5F] to-[#2D486D] rounded-2xl p-6 text-white text-center">
 <span class="material-symbols-outlined text-5xl mb-3 text-[#F97316]">work</span>
@@ -310,7 +290,6 @@ Envoyer ma candidature
 </div>
 </section>
 
-<!-- Offres d'emploi -->
 <section class="py-16 bg-[#F1F5F9]">
 <div class="max-w-[1280px] mx-auto px-8">
 <div class="text-center mb-12"><h2 class="font-h2 text-h2 text-primary mb-4">Postes <span class="text-[#F97316]">à pourvoir</span></h2><p class="text-slate-600 max-w-2xl mx-auto">Découvrez nos offres actuelles</p></div>
@@ -322,7 +301,6 @@ Envoyer ma candidature
 </div>
 </section>
 
-<!-- CTA -->
 <section class="py-12 bg-[#F97316] text-white text-center">
 <div class="max-w-[1280px] mx-auto px-8">
 <div class="flex flex-wrap justify-center items-center gap-6"><span class="text-lg font-semibold">📞 Une question sur le recrutement ?</span><a href="tel:0143379922" class="bg-white text-[#F97316] px-6 py-3 rounded-lg font-semibold hover:bg-[#1E3A5F] hover:text-white transition-all">Appelez-nous au 01 43 37 99 22</a></div>
@@ -333,7 +311,6 @@ Envoyer ma candidature
 <footer class="bg-[#1E3A5F] w-full py-12 px-8"><div class="max-w-[1280px] mx-auto flex flex-col md:flex-row justify-between items-center gap-6"><div class="text-lg font-black text-white">Informatis-web</div><div class="flex flex-wrap justify-center gap-6"><a href="mentions-legales.html" class="text-sm text-white/80 hover:text-[#F97316] transition-all">Mentions Légales</a><a href="cgv.html" class="text-sm text-white/80 hover:text-[#F97316] transition-all">CGV</a><a href="politique-confidentialite.html" class="text-sm text-white/80 hover:text-[#F97316] transition-all">Politique de Confidentialité</a><a href="recrutement.html" class="text-sm text-white/80 hover:text-[#F97316] transition-all">Recrutement</a></div><div class="text-sm text-white/80 text-center md:text-right">© 2026 Informatis-web. Tous droits réservés. Expertise en ingénierie digitale.</div></div></footer>
 
 <script>
-// Menu Mobile avec animation depuis la gauche
 const menuBtn = document.getElementById('menuBtn');
 const closeMenuBtn = document.getElementById('closeMenuBtn');
 const mobileMenu = document.getElementById('mobileMenu');
@@ -366,31 +343,6 @@ if (mobileMenuOverlay) {
 
 document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') closeMobileMenu();
-});
-
-// Formulaire de candidature
-function showSuccessMessage() {
-    document.getElementById('candidatureForm').style.display = 'none';
-    document.getElementById('successMessage').classList.remove('hidden');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-function resetForm() {
-    document.getElementById('candidatureForm').reset();
-    document.getElementById('candidatureForm').style.display = 'block';
-    document.getElementById('successMessage').classList.add('hidden');
-}
-
-// Smooth scroll pour les ancres
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            e.preventDefault();
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            closeMobileMenu();
-        }
-    });
 });
 </script>
 </body>
